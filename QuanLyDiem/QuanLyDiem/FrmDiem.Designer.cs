@@ -52,21 +52,14 @@
             this.txtMaSV = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbHocKy = new System.Windows.Forms.ComboBox();
             this.txtMaMon = new System.Windows.Forms.TextBox();
             this.btnDanhSach = new System.Windows.Forms.Button();
             this.cmbMaLop = new System.Windows.Forms.ComboBox();
             this.cmbMonHoc = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtLanThi = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.rdo8 = new System.Windows.Forms.RadioButton();
-            this.rdo7 = new System.Windows.Forms.RadioButton();
-            this.rdo4 = new System.Windows.Forms.RadioButton();
-            this.rdo6 = new System.Windows.Forms.RadioButton();
-            this.rdo3 = new System.Windows.Forms.RadioButton();
-            this.rdo5 = new System.Windows.Forms.RadioButton();
-            this.rdo2 = new System.Windows.Forms.RadioButton();
-            this.rdo1 = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,14 +67,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridViewDiem)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(518, 28);
+            this.label3.Location = new System.Drawing.Point(654, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(240, 45);
             this.label3.TabIndex = 14;
@@ -94,7 +86,7 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox2.Location = new System.Drawing.Point(653, 103);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(933, 438);
+            this.groupBox2.Size = new System.Drawing.Size(933, 357);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách sinh viên";
@@ -113,7 +105,7 @@
             this.GridViewDiem.Name = "GridViewDiem";
             this.GridViewDiem.RowHeadersWidth = 62;
             this.GridViewDiem.RowTemplate.Height = 28;
-            this.GridViewDiem.Size = new System.Drawing.Size(866, 366);
+            this.GridViewDiem.Size = new System.Drawing.Size(866, 266);
             this.GridViewDiem.TabIndex = 19;
             this.GridViewDiem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewDiem_CellClick);
             // 
@@ -170,7 +162,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(1392, 592);
+            this.btnThoat.Location = new System.Drawing.Point(1394, 517);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(96, 63);
             this.btnThoat.TabIndex = 56;
@@ -184,7 +176,7 @@
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuy.Location = new System.Drawing.Point(1270, 592);
+            this.btnHuy.Location = new System.Drawing.Point(1272, 517);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(93, 63);
             this.btnHuy.TabIndex = 57;
@@ -198,7 +190,7 @@
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(1148, 592);
+            this.btnLuu.Location = new System.Drawing.Point(1150, 517);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(93, 63);
             this.btnLuu.TabIndex = 58;
@@ -212,7 +204,7 @@
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(1023, 592);
+            this.btnXoa.Location = new System.Drawing.Point(1025, 517);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(94, 63);
             this.btnXoa.TabIndex = 59;
@@ -226,7 +218,7 @@
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(900, 592);
+            this.btnSua.Location = new System.Drawing.Point(902, 517);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(94, 63);
             this.btnSua.TabIndex = 60;
@@ -240,7 +232,7 @@
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(777, 592);
+            this.btnThem.Location = new System.Drawing.Point(779, 517);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(96, 63);
             this.btnThem.TabIndex = 61;
@@ -259,7 +251,7 @@
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox5.Location = new System.Drawing.Point(42, 565);
+            this.groupBox5.Location = new System.Drawing.Point(42, 486);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(649, 144);
             this.groupBox5.TabIndex = 84;
@@ -322,13 +314,14 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.cmbHocKy);
             this.groupBox4.Controls.Add(this.txtMaMon);
             this.groupBox4.Controls.Add(this.btnDanhSach);
             this.groupBox4.Controls.Add(this.cmbMaLop);
             this.groupBox4.Controls.Add(this.cmbMonHoc);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.txtLanThi);
-            this.groupBox4.Controls.Add(this.groupBox6);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.label1);
@@ -336,15 +329,43 @@
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox4.Location = new System.Drawing.Point(42, 103);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(554, 438);
+            this.groupBox4.Size = new System.Drawing.Size(554, 357);
             this.groupBox4.TabIndex = 83;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Lựa chọn";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(44, 104);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 30);
+            this.label9.TabIndex = 74;
+            this.label9.Text = "Học kỳ";
+            // 
+            // cmbHocKy
+            // 
+            this.cmbHocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbHocKy.FormattingEnabled = true;
+            this.cmbHocKy.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"});
+            this.cmbHocKy.Location = new System.Drawing.Point(150, 109);
+            this.cmbHocKy.Name = "cmbHocKy";
+            this.cmbHocKy.Size = new System.Drawing.Size(206, 28);
+            this.cmbHocKy.TabIndex = 73;
+            // 
             // txtMaMon
             // 
             this.txtMaMon.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtMaMon.Location = new System.Drawing.Point(416, 250);
+            this.txtMaMon.Location = new System.Drawing.Point(415, 168);
             this.txtMaMon.Name = "txtMaMon";
             this.txtMaMon.Size = new System.Drawing.Size(111, 26);
             this.txtMaMon.TabIndex = 72;
@@ -352,7 +373,7 @@
             // btnDanhSach
             // 
             this.btnDanhSach.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhSach.Location = new System.Drawing.Point(220, 357);
+            this.btnDanhSach.Location = new System.Drawing.Point(219, 275);
             this.btnDanhSach.Name = "btnDanhSach";
             this.btnDanhSach.Size = new System.Drawing.Size(135, 59);
             this.btnDanhSach.TabIndex = 71;
@@ -361,16 +382,18 @@
             // 
             // cmbMaLop
             // 
+            this.cmbMaLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMaLop.FormattingEnabled = true;
-            this.cmbMaLop.Location = new System.Drawing.Point(137, 48);
+            this.cmbMaLop.Location = new System.Drawing.Point(150, 48);
             this.cmbMaLop.Name = "cmbMaLop";
             this.cmbMaLop.Size = new System.Drawing.Size(206, 28);
             this.cmbMaLop.TabIndex = 70;
             // 
             // cmbMonHoc
             // 
+            this.cmbMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMonHoc.FormattingEnabled = true;
-            this.cmbMonHoc.Location = new System.Drawing.Point(151, 247);
+            this.cmbMonHoc.Location = new System.Drawing.Point(150, 165);
             this.cmbMonHoc.Name = "cmbMonHoc";
             this.cmbMonHoc.Size = new System.Drawing.Size(144, 28);
             this.cmbMonHoc.TabIndex = 69;
@@ -380,7 +403,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(316, 248);
+            this.label2.Location = new System.Drawing.Point(315, 166);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 30);
             this.label2.TabIndex = 66;
@@ -388,122 +411,16 @@
             // 
             // txtLanThi
             // 
-            this.txtLanThi.Location = new System.Drawing.Point(151, 301);
+            this.txtLanThi.Location = new System.Drawing.Point(150, 219);
             this.txtLanThi.Name = "txtLanThi";
             this.txtLanThi.Size = new System.Drawing.Size(144, 26);
             this.txtLanThi.TabIndex = 68;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.rdo8);
-            this.groupBox6.Controls.Add(this.rdo7);
-            this.groupBox6.Controls.Add(this.rdo4);
-            this.groupBox6.Controls.Add(this.rdo6);
-            this.groupBox6.Controls.Add(this.rdo3);
-            this.groupBox6.Controls.Add(this.rdo5);
-            this.groupBox6.Controls.Add(this.rdo2);
-            this.groupBox6.Controls.Add(this.rdo1);
-            this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(36, 92);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(452, 135);
-            this.groupBox6.TabIndex = 67;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Học kỳ";
-            // 
-            // rdo8
-            // 
-            this.rdo8.AutoSize = true;
-            this.rdo8.Location = new System.Drawing.Point(344, 73);
-            this.rdo8.Name = "rdo8";
-            this.rdo8.Size = new System.Drawing.Size(50, 34);
-            this.rdo8.TabIndex = 16;
-            this.rdo8.TabStop = true;
-            this.rdo8.Text = "8";
-            this.rdo8.UseVisualStyleBackColor = true;
-            // 
-            // rdo7
-            // 
-            this.rdo7.AutoSize = true;
-            this.rdo7.Location = new System.Drawing.Point(269, 74);
-            this.rdo7.Name = "rdo7";
-            this.rdo7.Size = new System.Drawing.Size(50, 34);
-            this.rdo7.TabIndex = 17;
-            this.rdo7.TabStop = true;
-            this.rdo7.Text = "7";
-            this.rdo7.UseVisualStyleBackColor = true;
-            // 
-            // rdo4
-            // 
-            this.rdo4.AutoSize = true;
-            this.rdo4.Location = new System.Drawing.Point(344, 34);
-            this.rdo4.Name = "rdo4";
-            this.rdo4.Size = new System.Drawing.Size(50, 34);
-            this.rdo4.TabIndex = 18;
-            this.rdo4.TabStop = true;
-            this.rdo4.Text = "4";
-            this.rdo4.UseVisualStyleBackColor = true;
-            // 
-            // rdo6
-            // 
-            this.rdo6.AutoSize = true;
-            this.rdo6.Location = new System.Drawing.Point(189, 74);
-            this.rdo6.Name = "rdo6";
-            this.rdo6.Size = new System.Drawing.Size(50, 34);
-            this.rdo6.TabIndex = 19;
-            this.rdo6.TabStop = true;
-            this.rdo6.Text = "6";
-            this.rdo6.UseVisualStyleBackColor = true;
-            // 
-            // rdo3
-            // 
-            this.rdo3.AutoSize = true;
-            this.rdo3.Location = new System.Drawing.Point(269, 34);
-            this.rdo3.Name = "rdo3";
-            this.rdo3.Size = new System.Drawing.Size(50, 34);
-            this.rdo3.TabIndex = 20;
-            this.rdo3.TabStop = true;
-            this.rdo3.Text = "3";
-            this.rdo3.UseVisualStyleBackColor = true;
-            // 
-            // rdo5
-            // 
-            this.rdo5.AutoSize = true;
-            this.rdo5.Location = new System.Drawing.Point(110, 74);
-            this.rdo5.Name = "rdo5";
-            this.rdo5.Size = new System.Drawing.Size(50, 34);
-            this.rdo5.TabIndex = 21;
-            this.rdo5.TabStop = true;
-            this.rdo5.Text = "5";
-            this.rdo5.UseVisualStyleBackColor = true;
-            // 
-            // rdo2
-            // 
-            this.rdo2.AutoSize = true;
-            this.rdo2.Location = new System.Drawing.Point(189, 34);
-            this.rdo2.Name = "rdo2";
-            this.rdo2.Size = new System.Drawing.Size(50, 34);
-            this.rdo2.TabIndex = 22;
-            this.rdo2.TabStop = true;
-            this.rdo2.Text = "2";
-            this.rdo2.UseVisualStyleBackColor = true;
-            // 
-            // rdo1
-            // 
-            this.rdo1.AutoSize = true;
-            this.rdo1.Location = new System.Drawing.Point(110, 34);
-            this.rdo1.Name = "rdo1";
-            this.rdo1.Size = new System.Drawing.Size(50, 34);
-            this.rdo1.TabIndex = 23;
-            this.rdo1.TabStop = true;
-            this.rdo1.Text = "1";
-            this.rdo1.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(43, 245);
+            this.label5.Location = new System.Drawing.Point(42, 163);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 30);
             this.label5.TabIndex = 66;
@@ -513,7 +430,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(44, 296);
+            this.label4.Location = new System.Drawing.Point(43, 214);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 30);
             this.label4.TabIndex = 65;
@@ -533,7 +450,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1608, 731);
+            this.ClientSize = new System.Drawing.Size(1608, 661);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnThoat);
@@ -553,8 +470,6 @@
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -591,17 +506,11 @@
         private System.Windows.Forms.ComboBox cmbMonHoc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLanThi;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.RadioButton rdo8;
-        private System.Windows.Forms.RadioButton rdo7;
-        private System.Windows.Forms.RadioButton rdo4;
-        private System.Windows.Forms.RadioButton rdo6;
-        private System.Windows.Forms.RadioButton rdo3;
-        private System.Windows.Forms.RadioButton rdo5;
-        private System.Windows.Forms.RadioButton rdo2;
-        private System.Windows.Forms.RadioButton rdo1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbHocKy;
+        private System.Windows.Forms.Label label9;
+
     }
 }

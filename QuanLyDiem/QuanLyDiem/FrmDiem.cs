@@ -27,8 +27,8 @@ namespace QuanLyDiem
             DAO.FillDataToCombo(sql, cmbMonHoc, "MaMon", "TenMon");
             cmbMaLop.SelectedIndex = -1;
             cmbMonHoc.SelectedIndex = -1;
-            cmbMaLop.Enabled = false;
-            cmbMonHoc.Enabled = false;
+            //cmbMaLop.Enabled = false;
+            //cmbMonHoc.Enabled = false;
             txtMaSV.Enabled = false;
             txtMaMon.Enabled = false;
             txtTenSV.Enabled = false;
@@ -66,6 +66,7 @@ namespace QuanLyDiem
             txtMaMon.Text = "";
             cmbMaLop.SelectedIndex = -1;
             cmbMonHoc.SelectedIndex = -1;
+            cmbHocKy.SelectedIndex = -1;
         }
 
         private void cmbMonHoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,7 +76,7 @@ namespace QuanLyDiem
                 txtMaMon.Text = "";
             }
             //Khi kich chon Ten mon hoc thi Ma mon se tu dong hien ra
-            string str = "SELECT MaMon FROM MonHoc WHERE MaMon =N'" + cmbMonHoc.SelectedValue + "'";
+            string str = "SELECT MaMon FROM MonHoc WHERE MaMon = N'" + cmbMonHoc.SelectedValue + "'";
             txtMaMon.Text = DAO.GetFieldValues(str);
 
         }
@@ -100,36 +101,12 @@ namespace QuanLyDiem
             cmbMaLop.Text = ma ;
             ma = GridViewDiem.CurrentRow.Cells["clmMaMon"].Value.ToString();
             cmbMonHoc.Text = DAO.GetFieldValues("select TenMon from MonHoc where MaMon = N'" + ma + "'");
-            ma= GridViewDiem.CurrentRow.Cells["clmHocKy"].Value.ToString();
-            RadioButton rdobtn = new RadioButton();
-            rdobtn.Name = "rdo" + ma;
-            rdobtn.Checked = true;
+            ma = GridViewDiem.CurrentRow.Cells["clmHocKy"].Value.ToString();
+            cmbHocKy.Text = ma;
             txtMaSV.Enabled = false;
             cmbMaLop.Enabled = false;
             cmbMonHoc.Enabled = false;
             DAO.CloseConnection();
-        }
-
-        int hk = -1;
-        private int CheckRadioButton()
-        {
-            if (rdo1.Checked == true)
-                hk = Convert.ToInt32(rdo1.Text);
-            if (rdo2.Checked == true)
-                hk = Convert.ToInt32(rdo2.Text);
-            if (rdo3.Checked == true)
-                hk = Convert.ToInt32(rdo3.Text);
-            if (rdo4.Checked == true)
-                hk = Convert.ToInt32(rdo4.Text);
-            if (rdo5.Checked == true)
-                hk = Convert.ToInt32(rdo5.Text);
-            if (rdo6.Checked == true)
-                hk = Convert.ToInt32(rdo6.Text);
-            if (rdo7.Checked == true)
-                hk = Convert.ToInt32(rdo7.Text);
-            if (rdo8.Checked == true)
-                hk = Convert.ToInt32(rdo8.Text);
-            return hk;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -175,7 +152,7 @@ namespace QuanLyDiem
                 return;
             }
 
-            sql = "UPDATE Diem SET HocKy = " + hk + ", LanThi = " + txtLanThi.Text + ", Diem = " + txtDiem.Text
+            sql = "UPDATE Diem SET HocKy = " + cmbHocKy.Text + ", LanThi = " + txtLanThi.Text + ", Diem = " + txtDiem.Text
                         + " WHERE MaSV=N'" + txtMaSV.Text.Trim() + "'AND MaLop=N'" + cmbMaLop.SelectedValue + "'AND MaMon=N'" + txtMaMon.Text.Trim() + "'";
             DAO.RunSql(sql);
             Load_DataGridView();
@@ -242,10 +219,10 @@ namespace QuanLyDiem
                 txtDiem.Focus();
                 return;
             }
-            if(CheckRadioButton()==-1)
+            if (cmbHocKy.SelectedIndex == -1)
             {
                 MessageBox.Show("Bạn phải chọn học kỳ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }                
+            }
 
             sql = "SELECT MaSV FROM SinhVien WHERE MaSV=N'" + txtMaSV.Text.Trim() + "'";
             if (DAO.CheckKeyExist(sql)==false)
@@ -261,8 +238,8 @@ namespace QuanLyDiem
                 txtMaSV.Focus();
                 return;
             }
-            sql = "INSERT INTO Diem VALUES(N'" + txtMaSV.Text.Trim() + "',N'" + cmbMaLop.SelectedValue + "',N'" + txtMaMon.Text + "'," 
-                        + hk + "," + txtLanThi.Text.Trim() + "," + txtDiem.Text.Trim() + ")";
+            sql = "INSERT INTO Diem VALUES(N'" + txtMaSV.Text.Trim() + "',N'" + cmbMaLop.Text + "',N'" + txtMaMon.Text + "'," 
+                        + cmbHocKy.Text + "," + txtLanThi.Text.Trim() + "," + txtDiem.Text.Trim() + ")";
             DAO.RunSql(sql);
             Load_DataGridView();
             ResetValues();
@@ -290,12 +267,9 @@ namespace QuanLyDiem
             cmbMaLop.SelectedIndex = -1;
             cmbMonHoc.SelectedIndex = -1;
         }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        
     }
 }
