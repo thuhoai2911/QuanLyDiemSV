@@ -69,29 +69,11 @@
     <Compile Include="FrmHeDaoTao.Designer.cs">
       <DependentUpon>FrmHeDaoTao.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmLop.Designer.cs">
-      <DependentUpon>FrmLop.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmMonHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMonHoc.Designer.cs">
-      <DependentUpon>FrmMonHoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPhongHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPhongHoc.Designer.cs">
-      <DependentUpon>FrmPhongHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmInBangDiemSV.cs">
       <SubType>Form</SubType>
@@ -113,17 +95,8 @@
     <EmbeddedResource Include="FrmHeDaoTao.resx">
       <DependentUpon>FrmHeDaoTao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLop.resx">
-      <DependentUpon>FrmLop.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmMonHoc.resx">
-      <DependentUpon>FrmMonHoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPhongHoc.resx">
-      <DependentUpon>FrmPhongHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInBangDiemSV.resx">
       <DependentUpon>FrmInBangDiemSV.cs</DependentUpon>
