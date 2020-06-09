@@ -7,7 +7,7 @@ using System.Data.Sql;
 using System.Windows.Forms;
 using System.Windows;
 using System.Data;
-namespace QuanLyBenhNhan
+namespace QuanLyDiem
 {
     class DAO
     {

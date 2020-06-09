@@ -38,5 +38,18 @@ namespace QuanLyDiem
         {
             this.Close();
         }
+
+        private void bảngĐiểmSinhViênToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FrmInBangDiemSV f4 = new FrmInBangDiemSV();
+            f4.Show();
+        }
+
+        private void danhSáchĐiẻmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmInDSDiem f5 = new FrmInDSDiem();
+            f5.Show();
+        }
+
     }
 }

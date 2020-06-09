@@ -54,7 +54,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbHocKy = new System.Windows.Forms.ComboBox();
-            this.txtMaMon = new System.Windows.Forms.TextBox();
+            this.txtTenMon = new System.Windows.Forms.TextBox();
             this.btnDanhSach = new System.Windows.Forms.Button();
             this.cmbMaLop = new System.Windows.Forms.ComboBox();
             this.cmbMonHoc = new System.Windows.Forms.ComboBox();
@@ -108,6 +108,7 @@
             this.GridViewDiem.Size = new System.Drawing.Size(866, 266);
             this.GridViewDiem.TabIndex = 19;
             this.GridViewDiem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewDiem_CellClick);
+            this.GridViewDiem.SelectionChanged += new System.EventHandler(this.GridViewDiem_SelectionChanged);
             // 
             // clmMaSV
             // 
@@ -316,7 +317,7 @@
             // 
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.cmbHocKy);
-            this.groupBox4.Controls.Add(this.txtMaMon);
+            this.groupBox4.Controls.Add(this.txtTenMon);
             this.groupBox4.Controls.Add(this.btnDanhSach);
             this.groupBox4.Controls.Add(this.cmbMaLop);
             this.groupBox4.Controls.Add(this.cmbMonHoc);
@@ -361,14 +362,15 @@
             this.cmbHocKy.Name = "cmbHocKy";
             this.cmbHocKy.Size = new System.Drawing.Size(206, 28);
             this.cmbHocKy.TabIndex = 73;
+            this.cmbHocKy.SelectedIndexChanged += new System.EventHandler(this.cmbHocKy_SelectedIndexChanged);
             // 
-            // txtMaMon
+            // txtTenMon
             // 
-            this.txtMaMon.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtMaMon.Location = new System.Drawing.Point(415, 168);
-            this.txtMaMon.Name = "txtMaMon";
-            this.txtMaMon.Size = new System.Drawing.Size(111, 26);
-            this.txtMaMon.TabIndex = 72;
+            this.txtTenMon.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtTenMon.Location = new System.Drawing.Point(415, 168);
+            this.txtTenMon.Name = "txtTenMon";
+            this.txtTenMon.Size = new System.Drawing.Size(111, 26);
+            this.txtTenMon.TabIndex = 72;
             // 
             // btnDanhSach
             // 
@@ -379,6 +381,7 @@
             this.btnDanhSach.TabIndex = 71;
             this.btnDanhSach.Text = "Danh sách";
             this.btnDanhSach.UseVisualStyleBackColor = true;
+            this.btnDanhSach.Click += new System.EventHandler(this.btnDanhSach_Click);
             // 
             // cmbMaLop
             // 
@@ -388,12 +391,13 @@
             this.cmbMaLop.Name = "cmbMaLop";
             this.cmbMaLop.Size = new System.Drawing.Size(206, 28);
             this.cmbMaLop.TabIndex = 70;
+            this.cmbMaLop.SelectedIndexChanged += new System.EventHandler(this.cmbMaLop_SelectedIndexChanged);
             // 
             // cmbMonHoc
             // 
             this.cmbMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMonHoc.FormattingEnabled = true;
-            this.cmbMonHoc.Location = new System.Drawing.Point(150, 165);
+            this.cmbMonHoc.Location = new System.Drawing.Point(150, 168);
             this.cmbMonHoc.Name = "cmbMonHoc";
             this.cmbMonHoc.Size = new System.Drawing.Size(144, 28);
             this.cmbMonHoc.TabIndex = 69;
@@ -405,9 +409,9 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(315, 166);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 30);
+            this.label2.Size = new System.Drawing.Size(97, 30);
             this.label2.TabIndex = 66;
-            this.label2.Text = "Mã môn";
+            this.label2.Text = "Tên môn";
             // 
             // txtLanThi
             // 
@@ -500,7 +504,7 @@
         private System.Windows.Forms.TextBox txtMaSV;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txtMaMon;
+        private System.Windows.Forms.TextBox txtTenMon;
         private System.Windows.Forms.Button btnDanhSach;
         private System.Windows.Forms.ComboBox cmbMaLop;
         private System.Windows.Forms.ComboBox cmbMonHoc;

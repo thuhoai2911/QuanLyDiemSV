@@ -51,5 +51,10 @@ namespace QuanLyDiem
         {
 
         }
+
+        private void FrmLop_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

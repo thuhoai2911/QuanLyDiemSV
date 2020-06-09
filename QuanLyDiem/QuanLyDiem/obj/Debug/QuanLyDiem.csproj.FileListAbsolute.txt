@@ -63,7 +63,6 @@ C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\obj\Debug\Quan
 C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.FrmMain.resources
 C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.FrmMonHoc.resources
 C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.FrmPhongHoc.resources
-C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.InBangDiemSV.resources
 C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.Properties.Resources.resources
 C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.csproj.GenerateResource.cache
 C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.csproj.CoreCompileInputs.cache
@@ -71,3 +70,6 @@ C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\obj\Debug\Quan
 C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.pdb
 C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\bin\Debug\QuanLyDiem.exe
 C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\bin\Debug\QuanLyDiem.pdb
+C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.csproj.ResolveComReference.cache
+C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.FrmInBangDiemSV.resources
+C:\Users\Win\Documents\BTL_CSLT2\BTL_Nhom13\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.FrmInDSDiem.resources

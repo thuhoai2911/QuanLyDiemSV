@@ -334,6 +334,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmLop";
             this.Text = "Quản lý Lớp học";
+            this.Load += new System.EventHandler(this.FrmLop_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewMonHoc)).EndInit();
