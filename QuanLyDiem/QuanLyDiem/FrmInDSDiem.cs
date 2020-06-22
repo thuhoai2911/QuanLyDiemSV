@@ -44,7 +44,7 @@ namespace QuanLyDiem
             {
                 DAO.OpenConnection();
                 string sql;
-                sql = "SELECT * FROM Diem" ;
+                sql = "SELECT * FROM Diem";
                 tblDSSiem = DAO.GetDataToTable(sql);
                 GridViewDSDiem.DataSource = tblDSSiem;
                 GridViewDSDiem.Enabled = true;
@@ -67,9 +67,9 @@ namespace QuanLyDiem
             {
                 btnLamMoi.Enabled = true;
                 string str;
-                str = "select distinct MaMon from Diem  where MaLop = '" + cmbMaLop.SelectedValue  + "'";
+                str = "select distinct MaMon from Diem  where MaLop = '" + cmbMaLop.SelectedValue + "'";
                 DAO.FillDataToCombo(str, cmbMaMon, "MaMon", "MaMon");
-                
+
             }
         }
 
@@ -105,7 +105,7 @@ namespace QuanLyDiem
                 tblDSSiem = DAO.GetDataToTable(str);
                 GridViewDSDiem.DataSource = tblDSSiem;
             }
-        } 
+        }
 
         private void ResetValues()
         {
@@ -167,7 +167,7 @@ namespace QuanLyDiem
                 exRange.Range["C5:F5"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
                 exRange.Range["C5:F5"].Value = "DANH SÁCH ĐIỂM SINH VIÊN";
 
-                sql = "SELECT * FROM Diem where MaMon=N'" + cmbMaMon.SelectedValue + "' and MaLop=N'"+cmbMaLop.SelectedValue+"'and LanThi="+txtLanThi.Text.Trim();
+                sql = "SELECT * FROM Diem where MaMon=N'" + cmbMaMon.SelectedValue + "' and MaLop=N'" + cmbMaLop.SelectedValue + "'and LanThi=" + txtLanThi.Text.Trim();
                 tblDSSiem = DAO.GetDataToTable(sql);
                 exRange.Range["A7:K7"].Font.Bold = true;
                 exRange.Range["A7:K7"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
@@ -200,12 +200,12 @@ namespace QuanLyDiem
                 }
                 exSheet.Name = "Danh Sách Điểm Sinh viên";
                 exApp.Visible = true;
-            }    
+            }
         }
 
         private void txtLanThi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8) || (Convert.ToInt32(e.KeyChar) == 13 ))
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8) || (Convert.ToInt32(e.KeyChar) == 13))
                 e.Handled = false;
             else
                 e.Handled = true;

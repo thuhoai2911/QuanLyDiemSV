@@ -1,5 +1,4 @@
-﻿using QuanLyDiem;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +35,7 @@ namespace QuanLyDiem
                 sql = "SELECT * FROM HeDaoTao";
                 tblHeDaoTao = DAO.GetDataToTable(sql);
                 GridViewHeDaoTao.DataSource = tblHeDaoTao;
+                DAO.CloseConnection();
             }
             catch (Exception ex)
             {
@@ -149,9 +149,10 @@ namespace QuanLyDiem
                 txtMaHDT.Text = "";
                 return;
             }
-            sql = "INSERT INTO HeDaoTao(MaHDT,TenHDT) VALUES(N'" + txtMaHDT.Text.Trim() + "',N'" + txtTenHDT.Text.Trim() + "')";
+            sql = "INSERT INTO HeDaoTao(MaHDT,TenHDT) VALUES('" + txtMaHDT.Text.Trim() + "',N'" + txtTenHDT.Text.Trim() + "')";
             DAO.RunSql(sql);
             Load_DataGridView();
+            GridViewHeDaoTao.Enabled = true;
             ResetValues();
             btnXoa.Enabled = true;
             btnThem.Enabled = true;
@@ -176,7 +177,8 @@ namespace QuanLyDiem
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("bạn có chắc chắn muốn thoát chương trình không", "Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Close();
         }
     }
 }

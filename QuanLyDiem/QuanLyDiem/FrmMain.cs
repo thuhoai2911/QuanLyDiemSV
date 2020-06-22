@@ -30,26 +30,92 @@ namespace QuanLyDiem
 
         private void điểmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmDiem f3 = new FrmDiem();
-            f3.Show();
+           FrmDiem f3 = new FrmDiem();
+          f3.Show();
         }
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("bạn có chắc chắn muốn thoát chương trình không", "Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Close();
         }
 
-        private void bảngĐiểmSinhViênToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void lớpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmInBangDiemSV f4 = new FrmInBangDiemSV();
+            FrmLop f4 = new FrmLop();
             f4.Show();
+        }
+
+        private void sinhViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSinhVien f5 = new FrmSinhVien();
+            f5.Show();
+        }
+
+        private void chuyênNgànhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmChuyenNganh f6 = new FrmChuyenNganh();
+            f6.Show();
+        }
+
+        private void thờiKhóaBiểuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmThoiKhoaBieu f7 = new FrmThoiKhoaBieu();
+            f7.Show();
+        }
+
+        private void khoaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmKhoa f8 = new FrmKhoa();
+            f8.Show();
+        }
+
+        private void quêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmQue f9 = new FrmQue();
+            f9.Show();
+        }
+
+        private void chứcVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmChucVu f10 = new FrmChucVu();
+            f10.Show();
+        }
+
+        private void mônHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMonHoc f12 = new FrmMonHoc();
+            f12.Show();
+        }
+
+        private void phòngHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPhongHoc f14 = new FrmPhongHoc();
+            f14.Show();
+        }
+
+        private void thôngTinSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTimKiem f15 = new FrmTimKiem();
+            f15.Show();
         }
 
         private void danhSáchĐiẻmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmInDSDiem f5 = new FrmInDSDiem();
-            f5.Show();
+            FrmInDSDiem f16 = new FrmInDSDiem();
+            f16.Show();
         }
 
+        private void bảngĐiểmSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmInBangDiemSV f17 = new FrmInBangDiemSV();
+            f17.Show();
+        }
+
+        private void thờiKhóaBiểuToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmInTKB f18 = new FrmInTKB();
+            f18.Show();
+        }
     }
 }

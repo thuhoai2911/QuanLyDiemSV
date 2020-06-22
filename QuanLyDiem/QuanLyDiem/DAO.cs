@@ -12,7 +12,7 @@ namespace QuanLyDiem
     class DAO
     {
         public static SqlConnection con;
-        public static string connectionString = "Data Source=DESKTOP-JQ0UKCH\\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True";
+        public static string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True";
         public static void OpenConnection()
         {
             con = new SqlConnection();
@@ -82,22 +82,21 @@ namespace QuanLyDiem
             cmd.Dispose();
             cmd = null;
         }
-
-        public static void FillDataToCombo(string sql, ComboBox combo, string ValueField, string DisplayField)
+        public static void FillDataToCombo(string sql, ComboBox cbo, string ma, string ten)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
-            DataTable mytable = new DataTable();
-            adapter.Fill(mytable);
-            combo.DataSource = mytable;
-            combo.ValueMember = ValueField;
-            combo.DisplayMember = DisplayField;
+            SqlDataAdapter Mydata = new SqlDataAdapter(sql, con);
+            DataTable table = new DataTable();
+            Mydata.Fill(table);
+            cbo.DataSource = table;
+            cbo.ValueMember = ma;
+            cbo.DisplayMember = ten;
+            Mydata.SelectCommand.CommandTimeout = 60;
         }
-
         public static string GetFieldValues(string sql)
         {
-            DAO.OpenConnection();
+            OpenConnection();
             string ma = "";
-            SqlCommand cmd = new SqlCommand(sql, DAO.con);
+            SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader reader;
             reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -106,8 +105,25 @@ namespace QuanLyDiem
             }
             reader.Close();
             return ma;
+            
         }
-
+        public static bool IsDate(string d)
+        {
+            string[] parts = d.Split('/');
+            if ((Convert.ToInt32(parts[0]) >= 1) && (Convert.ToInt32(parts[0]) <= 31) &&
+                (Convert.ToInt32(parts[1]) >= 1) && (Convert.ToInt32(parts[1]) <= 12) && (Convert.ToInt32(parts[2]) >= 1900))
+                return true;
+            else
+                return false;
+        }
+        public static string ConvertDateTime(string d)
+        {
+            string[] parts = d.Split('/');
+            string dt = String.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
+            return dt;
+        }
+        
+        
     }
 }
 

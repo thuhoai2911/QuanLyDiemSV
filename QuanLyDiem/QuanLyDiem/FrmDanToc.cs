@@ -1,4 +1,4 @@
-﻿using QuanLyDiem;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +26,7 @@ namespace QuanLyDiem
             btnHuy.Enabled = false;
             Load_DataGridView();
             DAO.CloseConnection();
-        }       
+        }
         private void Load_DataGridView()
         {
             try
@@ -68,7 +68,6 @@ namespace QuanLyDiem
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
             btnThem.Enabled = false;
-            GridViewDanToc.Enabled = false;
             ResetValues();
             txtMaDanToc.Enabled = true;
             txtMaDanToc.Focus();
@@ -80,17 +79,17 @@ namespace QuanLyDiem
             string sql;
             if (tblDanToc.Rows.Count == 0)
             {
-                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (txtMaDanToc.Text == "")
             {
-                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (txtTenDanToc.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Bạn phải nhập tên dân tộc", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn phải nhập tên dân tộc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenDanToc.Focus();
                 return;
             }
@@ -106,15 +105,15 @@ namespace QuanLyDiem
             string sql;
             if (tblDanToc.Rows.Count == 0)
             {
-                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (txtMaDanToc.Text == "")
             {
-                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo",MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 sql = "DELETE DanToc WHERE MaDanToc=N'" + txtMaDanToc.Text + "'";
                 DAO.RunSql(sql);
@@ -140,7 +139,7 @@ namespace QuanLyDiem
                 txtTenDanToc.Focus();
                 return;
             }
-            
+
             sql = "SELECT MaDanToc FROM DanToc WHERE MaDanToc=N'" + txtMaDanToc.Text.Trim() + "'";
             if (DAO.CheckKeyExist(sql))
             {
@@ -176,7 +175,8 @@ namespace QuanLyDiem
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("bạn có chắc chắn muốn thoát chương trình không", "Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Close();
         }
     }
 }
