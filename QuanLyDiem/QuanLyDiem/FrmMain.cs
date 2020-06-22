@@ -100,12 +100,6 @@ namespace QuanLyDiem
             f15.Show();
         }
 
-        private void danhSáchĐiẻmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmInDSDiem f16 = new FrmInDSDiem();
-            f16.Show();
-        }
-
         private void bảngĐiểmSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmInBangDiemSV f17 = new FrmInBangDiemSV();

@@ -81,12 +81,6 @@
     <Compile Include="FrmInBangDiemSV.Designer.cs">
       <DependentUpon>FrmInBangDiemSV.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInDSDiem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmInDSDiem.Designer.cs">
-      <DependentUpon>FrmInDSDiem.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmInTKB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,9 +160,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInBangDiemSV.resx">
       <DependentUpon>FrmInBangDiemSV.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmInDSDiem.resx">
-      <DependentUpon>FrmInDSDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInTKB.resx">
       <DependentUpon>FrmInTKB.cs</DependentUpon>
