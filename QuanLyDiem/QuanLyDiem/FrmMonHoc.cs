@@ -161,7 +161,8 @@ namespace QuanLyDiem
                 return;
             }
             string sql = "select MaMon from Diem where MaMon='" + txtMaMon.Text.Trim() + "'";
-            if (DAO.CheckKeyExist(sql) == true)
+            string sql1 = "select MaMon from Thoi_Khoa_Bieu where MaMon='" + txtMaMon.Text.Trim() + "'";
+            if (DAO.CheckKeyExist(sql)||DAO.CheckKeyExist(sql1))
                 MessageBox.Show("Bạn không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {

@@ -143,6 +143,55 @@
         k4XiDenr2gxMOPADq3Xmu5VhLBz3Cfm85LS+xxS5AAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="MaLop.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="MaMon.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="HocKy.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ThuHoc.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CaHoc.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TenPhong.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="btnTimKiem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAcJJREFUOE+d
+        VE1LAlEUDfrYStQuiKBltZA3Rq0SdDFjuRykYN4EldCufkC/IKJ/kX8gyUW7NkItDWrnohYFFkmhgWLn
+        2jEcZyY/Dhz0nXvvmXff3Ddj3VjZ3JlWlj4xLH0LfoBfYAnaqUrreaYNBsN0UiiugK2YpV/AgpHSl1iX
+        RQNrynIPmf4/aNYAX2GUsW17nKE2YqabQOzx19g5ohwMaROJFdkVdrBI2QfmlcCGseksU/aDZyZtZiiF
+        AnlRsImjuKDkB4zuZHe9bYYBhjdgNR6PT1DyQoIwLHDZF4blnqOmtb6l5yh5geAnmOeyL2SExHDN3F2g
+        5AVexD0Sylz2BSbiCvn1JdueouRF54kyGpRCIbtC7jcY3pHcACTUwAcZDco+KJWdRM41iIlwNigHQ26A
+        JIIyZ1HKf+DO2mbo6EklsxGGwmGY7jEK5LY0QYwG3qapz3hm0qY88Jm/RTFV6e1ZlgdDbgCMciioslBY
+        B/PSppjgf5G6HFMT+gHLwyFDK3Mm59v7NmkqZp0HDmYahtWEnhGTLsO2qUrpfaYMDykOMsV57zFleISY
+        vjM8Gvymbo6h0SFt4uPyJp80lcxGfgBfjOSIXF3wDwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="MaLop.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="MaMon.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="HocKy.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ThuHoc.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CaHoc.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TenPhong.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6

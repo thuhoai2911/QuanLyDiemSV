@@ -84,7 +84,6 @@ C:\Users\Win\Documents\GitHub\nhom1_ngoc\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyD
 C:\Users\Win\Documents\GitHub\nhom1_ngoc\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.FrmDanToc.resources
 C:\Users\Win\Documents\GitHub\nhom1_ngoc\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.FrmDiem.resources
 C:\Users\Win\Documents\GitHub\nhom1_ngoc\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.FrmHeDaoTao.resources
-C:\Users\Win\Documents\GitHub\nhom1_ngoc\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.FrmInDSDiem.resources
 C:\Users\Win\Documents\GitHub\nhom1_ngoc\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.FrmKhoa.resources
 C:\Users\Win\Documents\GitHub\nhom1_ngoc\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.FrmLop.resources
 C:\Users\Win\Documents\GitHub\nhom1_ngoc\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.FrmMain.resources

@@ -170,17 +170,25 @@ namespace QuanLyDiem
                 MessageBox.Show("Chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            sql = "select MaKhoa from ChuyenNganh where MaKhoa='" + txtMaKhoa.Text.Trim() + "'";
+            string sql1 = "select MaKhoa from SinhVien where MaKhoa='" + txtMaKhoa.Text.Trim() + "'";
+            string sql2 = "select MaKhoa from Lop where MaKhoa='" + txtMaKhoa.Text.Trim() + "'";
+            if (DAO.CheckKeyExist(sql) || DAO.CheckKeyExist(sql1) || DAO.CheckKeyExist(sql2))
+                MessageBox.Show("Bạn không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
             {
-                sql = "DELETE Khoa WHERE MaKhoa='" + txtMaKhoa.Text.ToString() + "'";
-                DAO.OpenConnection();
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = sql;
-                cmd.Connection = DAO.con;
-                cmd.ExecuteNonQuery();
-                DAO.CloseConnection();
-                ResetValues();
-                LoadDataToGrivew();
+                if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {  
+                    sql = "DELETE Khoa WHERE MaKhoa='" + txtMaKhoa.Text.ToString() + "'";
+                    DAO.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = sql;
+                    cmd.Connection = DAO.con;
+                    cmd.ExecuteNonQuery();
+                    DAO.CloseConnection();
+                    ResetValues();
+                    LoadDataToGrivew();
+                }
             }
         }
 

@@ -155,7 +155,6 @@ namespace QuanLyDiem
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("bạn có chắc chắn muốn thoát chương trình không", "Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 this.Close();
         }
 
@@ -196,7 +195,9 @@ namespace QuanLyDiem
                 return;
             }
             string sql = "select MaLop from Diem where MaLop='" + txtMaLop.Text.Trim() + "'";
-            if (DAO.CheckKeyExist(sql) == true)
+            string sql1 = "select MaLop from Thoi_Khoa_Bieu where MaLop='" + txtMaLop.Text.Trim() + "'";
+            string sql2 = "select MaLop from SinhVien where MaLop='" + txtMaLop.Text.Trim() + "'";
+            if (DAO.CheckKeyExist(sql)||DAO.CheckKeyExist(sql1)||DAO.CheckKeyExist(sql2) )
                 MessageBox.Show("Bạn không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {

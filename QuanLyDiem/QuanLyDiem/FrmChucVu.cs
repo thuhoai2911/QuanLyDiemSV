@@ -148,22 +148,27 @@ namespace QuanLyDiem
                 MessageBox.Show("Chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            sql = "select MaChucVu from SinhVien where MaChucVu='" + txtMaChucVu.Text.Trim() + "'";
+            if (DAO.CheckKeyExist(sql))
+                MessageBox.Show("Bạn không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
             {
-                sql = "DELETE ChucVu WHERE MaChucVu= N'" + txtMaChucVu.Text.Trim() + "'";
+                if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    sql = "DELETE ChucVu WHERE MaChucVu= N'" + txtMaChucVu.Text.Trim() + "'";
 
-                DAO.OpenConnection();
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = sql;
-                cmd.Connection = DAO.con;
-                cmd.ExecuteNonQuery();
-                DAO.CloseConnection();
-                ResetValues();
-                LoadDataToGrivew();
-
+                    DAO.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = sql;
+                    cmd.Connection = DAO.con;
+                    cmd.ExecuteNonQuery();
+                    DAO.CloseConnection();
+                    ResetValues();
+                    LoadDataToGrivew();
+                }
             }
-        }
 
+        }
         private void btnHuy_Click(object sender, EventArgs e)
         {
             ResetValues();

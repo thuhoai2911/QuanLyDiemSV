@@ -369,7 +369,7 @@ namespace QuanLyDiem
                     String sql1 = " update Lop set SiSo = SiSo -1 WHERE MaLop = '" + cmbMaLop.SelectedValue + "'";
                     DAO.RunSql(sql1);
                     int s2 = Convert.ToInt32(DAO.GetFieldValues(" select SiSo from Lop where MaLop = '" + cmbMaLop.SelectedValue + "'"));
-                    MessageBox.Show(" Sĩ số sau khi cập nhật của lớp '" + cmbMaLop.Text + "' là " + s2, " thông báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(" Sĩ số sau khi cập nhật của lớp '" + cmbMaLop.Text + "' là " + s2, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DAO.OpenConnection();
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandText = sql;

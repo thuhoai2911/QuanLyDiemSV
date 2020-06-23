@@ -26,7 +26,6 @@ namespace QuanLyDiem
             txtMaPhong.Enabled = false;
             LoadDataToTable();
         }
-
         private void LoadDataToTable()
         {
             try
@@ -44,7 +43,6 @@ namespace QuanLyDiem
             {
                 DAO.CloseConnection();
             }
-
         }
 
         private void GridViewPhongHoc_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -124,8 +122,7 @@ namespace QuanLyDiem
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("bạn có chắc chắn muốn thoát chương trình không", "Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                this.Close();
+            this.Close();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -163,18 +160,25 @@ namespace QuanLyDiem
                 MessageBox.Show("Chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn xóa không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+            string sql = "select MaPhong from Thoi_Khoa_Bieu where MaPhong='" + txtMaPhong.Text.Trim() + "'";
+            if (DAO.CheckKeyExist(sql))
+                MessageBox.Show("Bạn không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
             {
-                string sql = "delete from PhongHoc where MaPhong=N'" + txtMaPhong.Text.Trim() + "'";
-                DAO.OpenConnection();
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = sql;
-                cmd.Connection = DAO.con;
-                cmd.ExecuteNonQuery();
-                DAO.CloseConnection();
-                LoadDataToTable();
-                Reset();
-                txtMaPhong.Enabled = false;
+                if (MessageBox.Show("Bạn có muốn xóa không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+                {
+                    sql = "delete from PhongHoc where MaPhong=N'" + txtMaPhong.Text.Trim() + "'";
+                    DAO.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = sql;
+                    cmd.Connection = DAO.con;
+                    cmd.ExecuteNonQuery();
+                    DAO.CloseConnection();
+                    LoadDataToTable();
+                    Reset();
+                    txtMaPhong.Enabled = false;
+            }
+
             }
         }
 

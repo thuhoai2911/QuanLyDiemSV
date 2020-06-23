@@ -65,7 +65,7 @@ namespace QuanLyDiem
         {
             txtMaChuyenNganh.Enabled = true;
             txtMaChuyenNganh.Focus();
-
+            btnThem.Enabled = false;
             ResetValues();
             cmbKhoa.SelectedIndex = -1;
             btnHuy.Enabled = true;
@@ -94,17 +94,24 @@ namespace QuanLyDiem
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            string sql = "select MaChuyenNganh from SinhVien where MaChuyenNganh='" + txtMaChuyenNganh.Text.Trim() + "'";
+            if (DAO.CheckKeyExist(sql) == true)
+                MessageBox.Show("Bạn không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
             {
-                string sql = "delete from ChuyenNganh where MaChuyenNganh = '" + txtMaChuyenNganh.Text + "'";
-                DAO.OpenConnection();
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = sql;
-                cmd.Connection = DAO.con;
-                cmd.ExecuteNonQuery();
-                DAO.CloseConnection();
-                LoadDataToGridView();
+                 if (MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                 {
+                    sql = "delete from ChuyenNganh where MaChuyenNganh = '" + txtMaChuyenNganh.Text + "'";
+                    DAO.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = sql;
+                    cmd.Connection = DAO.con;
+                    cmd.ExecuteNonQuery();
+                    DAO.CloseConnection();
+                    LoadDataToGridView();
+                }
             }
+            
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -142,7 +149,7 @@ namespace QuanLyDiem
             else
             {
                 sql = "insert into ChuyenNganh (MaChuyenNganh,TenChuyenNganh,MaKhoa) " +
-                    " values ('" + txtMaChuyenNganh.Text.Trim() + "',N'" + txtTenChuyenNganh.Text.Trim() + "')";
+                    " values ('" + txtMaChuyenNganh.Text.Trim() + "',N'" + txtTenChuyenNganh.Text.Trim() + "','"+cmbKhoa.Text.Trim()+"')";
                 SqlCommand cmd = new SqlCommand(sql, DAO.con);
                 cmd.ExecuteNonQuery();
                 DAO.CloseConnection();

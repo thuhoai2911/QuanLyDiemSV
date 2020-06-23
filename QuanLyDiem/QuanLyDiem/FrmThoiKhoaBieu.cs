@@ -28,12 +28,15 @@ namespace QuanLyDiem
             cmbPhong.Enabled = true;
             btnHuy.Enabled = false;
             btnLuu.Enabled = false;
+            txtid.Enabled = false;
+
             LoadDataToGridView();
             DAO.FillDataToCombo("SELECT MaLop FROM Lop", cmbLop,"MaLop", "MaLop");
             cmbLop.SelectedIndex = -1;
             DAO.FillDataToCombo("SELECT MaPhong  FROM PhongHoc",cmbPhong, "MaPhong", "MaPhong");
             cmbPhong.SelectedIndex = -1;
             DAO.FillDataToCombo("SELECT MaMon FROM MonHoc", cmbMon,"MaMon", "MaMon");
+            cmbMon.SelectedIndex = -1;
             cmbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cmbMon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cmbPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -440,7 +443,7 @@ namespace QuanLyDiem
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình không?", "Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            
 
                 this.Close();
         }

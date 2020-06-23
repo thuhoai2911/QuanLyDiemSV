@@ -113,14 +113,19 @@ namespace QuanLyDiem
                 MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            sql = "select MaDanToc from SinhVien where MaDanToc='" + txtMaDanToc.Text.Trim() + "'";
+            if (DAO.CheckKeyExist(sql))
+                MessageBox.Show("Bạn không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
             {
-                sql = "DELETE DanToc WHERE MaDanToc=N'" + txtMaDanToc.Text + "'";
-                DAO.RunSql(sql);
-                Load_DataGridView();
-                ResetValues();
+                if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    sql = "DELETE DanToc WHERE MaDanToc=N'" + txtMaDanToc.Text + "'";
+                    DAO.RunSql(sql);
+                    Load_DataGridView();
+                    ResetValues();
+                }
             }
-
         }
 
         private void btnLuu_Click(object sender, EventArgs e)

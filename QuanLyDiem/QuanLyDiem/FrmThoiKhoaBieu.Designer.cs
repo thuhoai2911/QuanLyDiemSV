@@ -578,10 +578,10 @@
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(20, 20);
+            this.txtid.Location = new System.Drawing.Point(0, 87);
             this.txtid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(25, 26);
+            this.txtid.Size = new System.Drawing.Size(10, 26);
             this.txtid.TabIndex = 74;
             // 
             // FrmThoiKhoaBieu

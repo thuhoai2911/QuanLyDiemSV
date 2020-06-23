@@ -170,20 +170,27 @@ namespace QuanLyDiem
                 MessageBox.Show("Chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            sql = "select MaQue from SinhVien where MaQue='" + txtMaQue.Text.Trim() + "'";
+            if (DAO.CheckKeyExist(sql))
+                MessageBox.Show("Bạn không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
             {
-                sql = "DELETE Que WHERE MaQue= N'" + txtMaQue.Text.Trim() + "'";
+                if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    sql = "DELETE Que WHERE MaQue= N'" + txtMaQue.Text.Trim() + "'";
 
-                DAO.OpenConnection();
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = sql;
-                cmd.Connection = DAO.con;
-                cmd.ExecuteNonQuery();
-                DAO.CloseConnection();
-                ResetValues();
-                LoadDataToGrivew();
+                    DAO.OpenConnection();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = sql;
+                    cmd.Connection = DAO.con;
+                    cmd.ExecuteNonQuery();
+                    DAO.CloseConnection();
+                    ResetValues();
+                    LoadDataToGrivew();
 
+                }
             }
+
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
