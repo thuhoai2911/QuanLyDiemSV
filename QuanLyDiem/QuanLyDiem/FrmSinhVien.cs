@@ -101,8 +101,7 @@ namespace QuanLyDiem
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình không", "Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                this.Close();
+            this.Close();
         }
         private void ResetValues()
         {
@@ -139,7 +138,6 @@ namespace QuanLyDiem
                 return;
             }
             if (txtTenSV.Text == "")
-
             {
                 MessageBox.Show("Bạn không được để trống tên sinh viên");
                 txtTenSV.Focus();
@@ -342,7 +340,6 @@ namespace QuanLyDiem
             cmd.ExecuteNonQuery();//thực thi câu lệnh
             DAO.CloseConnection();
             LoadDatatogriview();
-
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -393,7 +390,6 @@ namespace QuanLyDiem
             btnLuu.Enabled = false;
             txtMaSV.Enabled = false;
             GridViewSinhVien.Enabled = true;
-
         }
         private void btnHienThi_Click(object sender, EventArgs e)
         {

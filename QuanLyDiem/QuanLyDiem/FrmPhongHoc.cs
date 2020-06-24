@@ -177,8 +177,7 @@ namespace QuanLyDiem
                     LoadDataToTable();
                     Reset();
                     txtMaPhong.Enabled = false;
-            }
-
+                }
             }
         }
 
@@ -193,7 +192,5 @@ namespace QuanLyDiem
             txtMaPhong.Enabled = false;
             GridViewPhongHoc.Enabled = true;
         }
-
-
     }
 }

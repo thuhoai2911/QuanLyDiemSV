@@ -23,7 +23,12 @@ namespace QuanLyDiem
 
         private void FrmKhoa_Load(object sender, EventArgs e)
         {
+            DAO.OpenConnection();
             LoadDataToGrivew();
+            txtMaKhoa.Enabled = false;
+            btnLuu.Enabled = false;
+            btnHuy.Enabled = false;
+            DAO.CloseConnection();
         }
         public void LoadDataToGrivew()
         {
@@ -47,7 +52,6 @@ namespace QuanLyDiem
 
         private void ResetValues()
         {
-            txtMaKhoa.Enabled = true;
             txtMaKhoa.Text = "";
             txtTenKhoa.Text = "";
             txtDienThoai.Text = "";
@@ -57,12 +61,21 @@ namespace QuanLyDiem
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            ResetValues();
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
             btnLuu.Enabled = true;
+            btnHuy.Enabled = true;
+            btnThem.Enabled = false;
+            ResetValues();
+            GridViewKhoa.Enabled = false;
+            txtMaKhoa.Enabled = true;
+            txtMaKhoa.Focus();
+            return;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            DAO.OpenConnection();
             if (txtMaKhoa.Text == "")
             {
                 MessageBox.Show("bạn chưa nhập mã khoa ");
@@ -96,8 +109,6 @@ namespace QuanLyDiem
 
             string sqlCheckKey = "Select * from Khoa Where MaKhoa = '"
                                 + txtMaKhoa.Text.ToString() + "'";
-            DAO.OpenConnection();
-
 
             if (DAO.CheckKeyExist(sqlCheckKey))
             {
@@ -106,26 +117,25 @@ namespace QuanLyDiem
                 txtMaKhoa.Focus();
                 return;
             }
-            else
-            {
-                string sql = "insert into Khoa values ('" +
+            string sql = "insert into Khoa values ('" +
                             txtMaKhoa.Text.ToString() + "' , N'" +
                             txtTenKhoa.Text.Trim() + "','" + txtDienThoai.Text.Trim() + "','" + txtDiaChi.Text.Trim() + "','" + txtWebsite.Text.Trim() + "')";
-                MessageBox.Show("oke");
-                SqlCommand cmd = new SqlCommand(sql, DAO.con);
-                cmd.ExecuteNonQuery();
-                DAO.CloseConnection();
-                LoadDataToGrivew();
-                DAO.CloseConnection();
-                btnLuu.Enabled = false;
-                //cmbMaKhoa.Enabled = false;
-            }
+            DAO.RunSql(sql);
+            LoadDataToGrivew();
+            GridViewKhoa.Enabled = true;
+            ResetValues();
+            btnXoa.Enabled = true;
+            btnThem.Enabled = true;
+            btnSua.Enabled = true;
+            btnHuy.Enabled = true;
+            btnLuu.Enabled = false;
+            txtMaKhoa.Enabled = false;
+            DAO.CloseConnection();
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
-            string sql;
-
+            DAO.OpenConnection();
+            string sql;          
             if (tblKhoa.Rows.Count == 0)
             {
                 MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -142,23 +152,18 @@ namespace QuanLyDiem
                 txtTenKhoa.Focus();
                 return;
             }
-            else
-            {
-                sql = "Update Khoa set TenKhoa = N'" + txtTenKhoa.Text.Trim() + "', DienThoai = N'" + txtDienThoai.Text.Trim() 
-                    + "',DiaChi = N'" + txtDiaChi.Text.Trim() + "', Website = N'" + txtWebsite.Text.Trim() + "' where MaKhoa = '" 
-                    + txtMaKhoa.Text.ToString() + "'";
-                DAO.OpenConnection();
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = sql;
-                cmd.Connection = DAO.con;
-                cmd.ExecuteNonQuery();//thực thi câu lệnh
-                DAO.CloseConnection();
-                LoadDataToGrivew();
-            }
+             sql = "Update Khoa set TenKhoa = N'" + txtTenKhoa.Text.Trim() + "', DienThoai = N'" + txtDienThoai.Text.Trim()
+                + "',DiaChi = N'" + txtDiaChi.Text.Trim() + "', Website = N'" + txtWebsite.Text.Trim() + "' where MaKhoa = '"
+                + txtMaKhoa.Text.ToString() + "'";     
+             DAO.RunSql(sql);
+             LoadDataToGrivew();
+             ResetValues();
+             btnHuy.Enabled = false;
+             DAO.CloseConnection();
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            //DAO.OpenConnection();
             string sql;
             if (tblKhoa.Rows.Count == 0)
             {
@@ -178,40 +183,36 @@ namespace QuanLyDiem
             else
             {
                 if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                {  
+                {
                     sql = "DELETE Khoa WHERE MaKhoa='" + txtMaKhoa.Text.ToString() + "'";
-                    DAO.OpenConnection();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = sql;
-                    cmd.Connection = DAO.con;
-                    cmd.ExecuteNonQuery();
-                    DAO.CloseConnection();
-                    ResetValues();
+                    DAO.RunSql(sql);
                     LoadDataToGrivew();
+                    ResetValues();
                 }
             }
+            //DAO.CloseConnection();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
             ResetValues();
+            GridViewKhoa.Enabled = true;
             btnHuy.Enabled = false;
             btnThem.Enabled = true;
             btnXoa.Enabled = true;
             btnSua.Enabled = true;
             btnLuu.Enabled = false;
             txtMaKhoa.Enabled = false;
-
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("bạn có chắc chắn muốn thoát chương trình không", "Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                this.Close();
+            this.Close();
         }
 
         private void GridViewKhoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            DAO.OpenConnection();
             txtMaKhoa.Text = GridViewKhoa.CurrentRow.Cells["clmMaKhoa"].Value.ToString();
             txtTenKhoa.Text = GridViewKhoa.CurrentRow.Cells["clmTenKhoa"].Value.ToString();
             txtDienThoai.Text = GridViewKhoa.CurrentRow.Cells["clmDienThoai"].Value.ToString();
@@ -220,8 +221,6 @@ namespace QuanLyDiem
             txtMaKhoa.Enabled = false;
         }
     }
-
-
 }
 
 

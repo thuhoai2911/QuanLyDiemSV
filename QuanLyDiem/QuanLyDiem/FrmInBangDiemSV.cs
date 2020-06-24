@@ -213,7 +213,6 @@ namespace QuanLyDiem
                                 borders1[COMExcel.XlBordersIndex.xlDiagonalDown].LineStyle = COMExcel.XlLineStyle.xlLineStyleNone;
                                 borders1 = null;
                             }
-
                             exSheet.Name = "Điểm sinh viên";
                             exApp.Visible = true;
                         }

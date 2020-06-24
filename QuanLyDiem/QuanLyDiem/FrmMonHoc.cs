@@ -109,8 +109,7 @@ namespace QuanLyDiem
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("bạn có chắc chắn muốn thoát chương trình không", "Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                this.Close();
+            this.Close();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

@@ -109,9 +109,8 @@ namespace QuanLyDiem
                     cmd.ExecuteNonQuery();
                     DAO.CloseConnection();
                     LoadDataToGridView();
-                }
-            }
-            
+                 }
+            }  
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -163,8 +162,6 @@ namespace QuanLyDiem
             btnLuu.Enabled = false;
             txtMaChuyenNganh.Enabled = false;
             btnHuy.Enabled = false;
-
-
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -176,7 +173,6 @@ namespace QuanLyDiem
             btnSua.Enabled = true;
             btnLuu.Enabled = false;
             txtMaChuyenNganh.Enabled = false;
-
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

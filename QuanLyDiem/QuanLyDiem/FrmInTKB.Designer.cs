@@ -37,13 +37,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HocKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThuHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CaHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,7 +102,6 @@
             this.cmbHocKy.Size = new System.Drawing.Size(180, 28);
             this.cmbHocKy.TabIndex = 4;
             this.cmbHocKy.SelectedIndexChanged += new System.EventHandler(this.cmbHocKy_SelectedIndexChanged);
-            this.cmbHocKy.TextChanged += new System.EventHandler(this.cmbHocKy_TextChanged);
             // 
             // button1
             // 
@@ -146,22 +145,6 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(785, 150);
             this.dataGridView1.TabIndex = 87;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.Silver;
-            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiem.Location = new System.Drawing.Point(805, 157);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(121, 61);
-            this.btnTimKiem.TabIndex = 88;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTimKiem.UseVisualStyleBackColor = false;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // MaLop
             // 
@@ -210,6 +193,22 @@
             this.TenPhong.MinimumWidth = 8;
             this.TenPhong.Name = "TenPhong";
             this.TenPhong.Width = 120;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.Silver;
+            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
+            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimKiem.Location = new System.Drawing.Point(805, 157);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(121, 61);
+            this.btnTimKiem.TabIndex = 88;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // FrmInTKB
             // 

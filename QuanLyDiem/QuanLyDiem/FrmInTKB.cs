@@ -22,10 +22,8 @@ namespace QuanLyDiem
         private void FrmInTKB_Load(object sender, EventArgs e)
         {
             DAO.OpenConnection();
-
             DAO.FillDataToCombo("SELECT MaLop FROM Thoi_Khoa_Bieu group by(MaLop)", cmbLop,"MaLop", "MaLop");
             cmbLop.SelectedIndex = -1;
-
             LoadDataToGridView();
             DAO.FillDataToCombo("SELECT HocKy  FROM Thoi_Khoa_Bieu  group by(HocKy) ",cmbHocKy, "HocKy", "HocKy");
             cmbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -34,8 +32,6 @@ namespace QuanLyDiem
             cmbLop.SelectedIndexChanged += cmbLop_SelectedIndexChanged;
             cmbHocKy.SelectedIndexChanged += cmbHocKy_SelectedIndexChanged;
             DAO.CloseConnection();
-
-
         }
         private void LoadDataToGridView()
         {
@@ -65,16 +61,9 @@ namespace QuanLyDiem
             cmbHocKy.Text = DAO.GetFieldValues(str);
         }
 
-        private void cmbHocKy_TextChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void btnThoat_Click(object sender, EventArgs e)
-        {
-            
-                this.Close();
+        {        
+            this.Close();
         }
 
         private void btnIn_Click(object sender, EventArgs e)
@@ -142,11 +131,9 @@ namespace QuanLyDiem
             {
                 //Điền số thứ tự vào cột 4 từ dòng 8
                 exSheet.Cells[4][hang + 8] = hang + 1;
-                for (cot = 0; cot <= Thoi_Khoa_Bieu.Columns.Count - 1; cot++)
-                    //Điền thông tin hàng từ cột thứ 5, dòng 8
+                for (cot = 0; cot <= Thoi_Khoa_Bieu.Columns.Count - 1; cot++)//Điền thông tin hàng từ cột thứ 5, dòng 8
                     exSheet.Cells[cot + 5][hang + 8] = Thoi_Khoa_Bieu.Rows[hang][cot].ToString();
             }
-
             exApp.Visible = true;
         }
 
@@ -156,15 +143,9 @@ namespace QuanLyDiem
             {
                 string str;
                 str = "select distinct HocKy from Thoi_Khoa_Bieu where MaLop = '" + cmbLop.SelectedValue + "' ";
-                // MessageBox.Show(str);
                 DAO.FillDataToCombo(str, cmbHocKy, "HocKy", "HocKy");
             }
         }
-        private void cmbHocKy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string sql;
@@ -184,6 +165,11 @@ namespace QuanLyDiem
             }
             tblInTKB = DAO.GetDataToTable(sql); 
             dataGridView1.DataSource = tblInTKB;
+        }
+
+        private void cmbHocKy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

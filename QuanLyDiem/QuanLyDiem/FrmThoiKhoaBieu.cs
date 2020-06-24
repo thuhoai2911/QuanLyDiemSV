@@ -293,23 +293,17 @@ namespace QuanLyDiem
                 rdohk7.Checked = true;
             if (GridViewTKB.CurrentRow.Cells["HocKy"].Value.ToString() == "8")
                 rdohk8.Checked = true;
+
             if (GridViewTKB.CurrentRow.Cells["ThuHoc"].Value.ToString() == "Hai")
                 rdothu2.Checked = true;
-
-
             if (GridViewTKB.CurrentRow.Cells["ThuHoc"].Value.ToString() == "Ba")
                 rdothu3.Checked = true;
-
             if (GridViewTKB.CurrentRow.Cells["ThuHoc"].Value.ToString() == "Tư")
                 rdothu4.Checked = true;
-
             if (GridViewTKB.CurrentRow.Cells["ThuHoc"].Value.ToString() == "Năm")
                 rdothu5.Checked = true;
-
             if (GridViewTKB.CurrentRow.Cells["ThuHoc"].Value.ToString() == "Sáu")
                 rdothu6.Checked = true;
-
-
             if (GridViewTKB.CurrentRow.Cells["ThuHoc"].Value.ToString() == "Bảy")
                 rdothu7.Checked = true;
 
@@ -327,9 +321,7 @@ namespace QuanLyDiem
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
             int strHK = -1;
-
             if (rdohk1.Checked == true)
                 strHK = Convert.ToInt32(rdohk1.Text);
             if (rdohk2.Checked == true)
@@ -394,19 +386,16 @@ namespace QuanLyDiem
             if (strHK == -1)
             {
                 MessageBox.Show("Bạn phải chọn Học Kỳ!", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 return;
             }
             if (strCa == -1)
             {
                 MessageBox.Show("Bạn phải chọn Ca học!", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 return;
             }
             if (strThu == "")
             {
                 MessageBox.Show("Bạn phải chọn Thứ học!", "Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 return;
             }
 
@@ -422,7 +411,6 @@ namespace QuanLyDiem
             cmbLop.Enabled = false;
             cmbMon.Enabled = false;
             btnHuy.Enabled = false;
-
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -438,14 +426,10 @@ namespace QuanLyDiem
             btnLuu.Enabled = false;
             cmbLop.Enabled = false;
             cmbMon.Enabled = false;
-
         }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            
-
-                this.Close();
+            this.Close();
         }
     }
 }

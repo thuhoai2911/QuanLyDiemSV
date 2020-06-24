@@ -294,7 +294,6 @@ namespace QuanLyDiem
             {
                 DAO.CloseConnection();
             }
-
         }
         private void ResetValues()
         {

@@ -22,11 +22,12 @@ namespace QuanLyDiem
             InitializeComponent();
 
         }
-
         private void FrmQue_Load(object sender, EventArgs e)
         {
             LoadDataToGrivew();
-
+            txtMaQue.Enabled = false;
+            btnLuu.Enabled = false;
+            btnHuy.Enabled = false;
         }
         public void LoadDataToGrivew()
         {
@@ -51,35 +52,34 @@ namespace QuanLyDiem
 
         private void GridViewQue_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            DAO.OpenConnection();
             txtMaQue.Text = GridViewQue.CurrentRow.Cells["clmMaQue"].Value.ToString();
             txtTenQue.Text = GridViewQue.CurrentRow.Cells["clmTenQue"].Value.ToString();
             txtMaQue.Enabled = false;
-
         }
         private void ResetValues()
         {
-            txtMaQue.Enabled = true;
             txtMaQue.Text = "";
             txtTenQue.Text = "";
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            ResetValues();
-            btnHuy.Enabled = true;
-            btnLuu.Enabled = true;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
-            btnThoat.Enabled = true;
-
-
+            btnLuu.Enabled = true;
+            btnHuy.Enabled = true;
+            btnThem.Enabled = false;
+            ResetValues();
+            GridViewQue.Enabled = false;
+            txtMaQue.Enabled = true;
+            txtMaQue.Focus();
+            return;
         }
-
-
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            DAO.OpenConnection();
             string sql;
             if (tblQue.Rows.Count == 0)
             {
@@ -97,29 +97,17 @@ namespace QuanLyDiem
                 txtTenQue.Focus();
                 return;
             }
-
-            else
-            {
-                sql = "Update Que set TenQue = N'" + txtTenQue.Text.ToString() + "' + where MaQue = '" + txtMaQue.Text.ToString() + "'";
-                MessageBox.Show("oke");
-
-                DAO.OpenConnection();
-                SqlCommand cmd = new SqlCommand(sql, DAO.con);
-                cmd.CommandText = sql;
-                cmd.Connection = DAO.con;
-                cmd.ExecuteNonQuery();//thực thi câu lệnh
-                DAO.CloseConnection();
-                LoadDataToGrivew();
-                btnHuy.Enabled = false;
-                btnLuu.Enabled = true;
-                btnThem.Enabled = true;
-                btnXoa.Enabled = true;
-                btnThoat.Enabled = true;
-            }
+            sql = "Update Que set TenQue = N'" + txtTenQue.Text.Trim() + "' where MaQue = '" + txtMaQue.Text.Trim() + "'";  
+            DAO.RunSql(sql);
+            LoadDataToGrivew();
+            ResetValues();
+            btnHuy.Enabled = false;
+            DAO.CloseConnection();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            DAO.OpenConnection();
             if (txtMaQue.Text == "")
             {
                 MessageBox.Show("bạn chưa nhập mã quê ");
@@ -144,17 +132,18 @@ namespace QuanLyDiem
                 txtMaQue.Focus();
                 return;
             }
-            else
-            {
-                string sql = "insert into Que values ('" + txtMaQue.Text.Trim() + "' , N'" + txtTenQue.Text.Trim() + "')";
-                SqlCommand cmd = new SqlCommand(sql, DAO.con);
-                cmd.ExecuteNonQuery();
-                DAO.CloseConnection();
-                LoadDataToGrivew();
-                DAO.CloseConnection();
-                btnLuu.Enabled = false;
-                txtMaQue.Enabled = false;
-            }
+            string sql = "insert into Que values ('" + txtMaQue.Text.Trim() + "' , N'" + txtTenQue.Text.Trim() + "')";
+            DAO.RunSql(sql);
+            LoadDataToGrivew();
+            GridViewQue.Enabled = true;
+            ResetValues();
+            btnXoa.Enabled = true;
+            btnThem.Enabled = true;
+            btnSua.Enabled = true;
+            btnHuy.Enabled = true;
+            btnLuu.Enabled = false;
+            txtMaQue.Enabled = false;
+            DAO.CloseConnection();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -178,24 +167,17 @@ namespace QuanLyDiem
                 if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     sql = "DELETE Que WHERE MaQue= N'" + txtMaQue.Text.Trim() + "'";
-
-                    DAO.OpenConnection();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = sql;
-                    cmd.Connection = DAO.con;
-                    cmd.ExecuteNonQuery();
-                    DAO.CloseConnection();
-                    ResetValues();
+                    DAO.RunSql(sql);
                     LoadDataToGrivew();
-
+                    ResetValues();
                 }
             }
-
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
             ResetValues();
+            GridViewQue.Enabled = true;
             btnHuy.Enabled = false;
             btnThem.Enabled = true;
             btnXoa.Enabled = true;
@@ -206,8 +188,7 @@ namespace QuanLyDiem
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("bạn có chắc chắn muốn thoát chương trình không", "Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                this.Close();
+            this.Close();
         }
     }
 

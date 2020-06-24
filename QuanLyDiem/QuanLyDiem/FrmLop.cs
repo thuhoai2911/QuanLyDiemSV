@@ -155,7 +155,7 @@ namespace QuanLyDiem
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-                this.Close();
+            this.Close();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
