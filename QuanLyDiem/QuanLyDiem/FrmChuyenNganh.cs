@@ -163,7 +163,6 @@ namespace QuanLyDiem
             txtMaChuyenNganh.Enabled = false;
             btnHuy.Enabled = false;
         }
-
         private void btnHuy_Click(object sender, EventArgs e)
         {
             ResetValues();
@@ -174,13 +173,10 @@ namespace QuanLyDiem
             btnLuu.Enabled = false;
             txtMaChuyenNganh.Enabled = false;
         }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("bạn có chắc chắn muốn thoát chương trình không", "Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                this.Close();
+            this.Close();
         }
-
         private void GridViewChuyenNganh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtMaChuyenNganh.Text = GridViewChuyenNganh.CurrentRow.Cells["MaChuyenNganh"].Value.ToString();
@@ -189,7 +185,6 @@ namespace QuanLyDiem
             cmbKhoa.Text = ma;
             txtMaChuyenNganh.Enabled = false;
         }
-
         private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sql = "select TenKhoa from Khoa where MaKhoa='" + cmbKhoa.SelectedValue + "'";

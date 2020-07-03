@@ -40,8 +40,6 @@ namespace QuanLyDiem
             cmbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cmbMon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cmbPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-
-
             DAO.CloseConnection();
         }
         private void LoadDataToGridView()
@@ -51,6 +49,10 @@ namespace QuanLyDiem
             DataTable table = new DataTable();
             adapter.Fill(table);
             GridViewTKB.DataSource = table;
+            // Không cho phép thêm mới dữ liệu trực tiếp trên lưới
+            GridViewTKB.AllowUserToAddRows = false;
+            // Không cho phép sửa dữ liệu trực tiếp trên lưới
+            GridViewTKB.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
         private void btnThem_Click(object sender, EventArgs e)

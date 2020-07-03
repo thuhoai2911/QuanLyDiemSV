@@ -83,7 +83,7 @@
             this.btnThem.BackColor = System.Drawing.Color.White;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(42, 580);
+            this.btnThem.Location = new System.Drawing.Point(59, 591);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(96, 63);
             this.btnThem.TabIndex = 62;
@@ -96,7 +96,7 @@
             // 
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(212, 580);
+            this.btnSua.Location = new System.Drawing.Point(224, 591);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(94, 63);
             this.btnSua.TabIndex = 63;
@@ -109,7 +109,7 @@
             // 
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(387, 580);
+            this.btnXoa.Location = new System.Drawing.Point(390, 591);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(94, 63);
             this.btnXoa.TabIndex = 64;
@@ -122,7 +122,7 @@
             // 
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(548, 580);
+            this.btnLuu.Location = new System.Drawing.Point(562, 591);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(93, 63);
             this.btnLuu.TabIndex = 65;
@@ -135,7 +135,7 @@
             // 
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuy.Location = new System.Drawing.Point(716, 580);
+            this.btnHuy.Location = new System.Drawing.Point(728, 591);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(93, 63);
             this.btnHuy.TabIndex = 66;
@@ -148,7 +148,7 @@
             // 
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(868, 580);
+            this.btnThoat.Location = new System.Drawing.Point(900, 591);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(96, 63);
             this.btnThoat.TabIndex = 67;
@@ -589,7 +589,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1068, 654);
+            this.ClientSize = new System.Drawing.Size(1068, 680);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.GrbCa);
             this.Controls.Add(this.cmbMon);

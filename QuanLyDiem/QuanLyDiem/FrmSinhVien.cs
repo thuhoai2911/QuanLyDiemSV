@@ -13,6 +13,7 @@ namespace QuanLyDiem
 {
     public partial class FrmSinhVien : Form
     {
+        string sql;
         DataTable tblSinhVien;
         string GioiTinh;
         public FrmSinhVien()
@@ -22,8 +23,8 @@ namespace QuanLyDiem
         private void FrmSinhVien_Load(object sender, EventArgs e)
         {
             cmbMaKhoa.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMaQue.DropDownStyle = ComboBoxStyle.DropDownList; ;
             cmbMaLop.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbMaQue.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbMaDanToc.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbMaChuyenNganh.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbMaHDT.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -31,7 +32,7 @@ namespace QuanLyDiem
             cbMaLop.DropDownStyle = ComboBoxStyle.DropDownList;
             LoadDatatogriview();
             btnLuu.Enabled = false;
-            string sql = "select MaLop, TenLop from Lop";
+            sql = "select MaLop, TenLop from Lop";
             DAO.FillDataToCombo(sql, cmbMaLop, "MaLop", "TenLop");//lớp
             sql = "select MaKhoa, TenKhoa from Khoa";
             DAO.FillDataToCombo(sql, cmbMaKhoa, "MaKhoa", "TenKhoa");//khoa            
@@ -50,17 +51,16 @@ namespace QuanLyDiem
             cbMaLop.SelectedIndex = -1;
             ResetValues();
             cmbMaChuyenNganh.SelectedIndex = -1;
-            // Không cho phép thêm mới dữ liệu trực tiếp trên lưới
             GridViewSinhVien.AllowUserToAddRows = false;
-            // Không cho phép sửa dữ liệu trực tiếp trên lưới
             GridViewSinhVien.EditMode = DataGridViewEditMode.EditProgrammatically;
+
         }
-        private void LoadDatatogriview()// LẤY DỮ LIỆU ĐỔ VÀO DATAGRIDVIEW
+        private void LoadDatatogriview()
         {
             try
             {
                 DAO.OpenConnection();
-                string sql = " select * from SinhVien";
+                sql = " select * from SinhVien";
                 tblSinhVien = DAO.GetDataToTable(sql);
                 GridViewSinhVien.DataSource = tblSinhVien;
             }
@@ -77,7 +77,7 @@ namespace QuanLyDiem
         {
             txtMaSV.Text = GridViewSinhVien.CurrentRow.Cells["clmMaSV"].Value.ToString();
             txtTenSV.Text = GridViewSinhVien.CurrentRow.Cells["clmTenSV"].Value.ToString();
-            string sql = "SELECT TenKhoa FROM Khoa WHERE MaKhoa='" + GridViewSinhVien.CurrentRow.Cells["clmMaKhoa"].Value.ToString() + "'";
+            sql = "SELECT TenKhoa FROM Khoa WHERE MaKhoa='" + GridViewSinhVien.CurrentRow.Cells["clmMaKhoa"].Value.ToString() + "'";
             string s1 = "SELECT TenLop FROM Lop WHERE MaLop='" + GridViewSinhVien.CurrentRow.Cells["clmMaLop"].Value.ToString() + "'";
             string s2 = "SELECT TenQue FROM Que WHERE MaQue='" + GridViewSinhVien.CurrentRow.Cells["clmMaQue"].Value.ToString() + "'";
             string s3 = "SELECT TenDanToc FROM DanToc WHERE MaDanToc='" + GridViewSinhVien.CurrentRow.Cells["clmMaDanToc"].Value.ToString() + "'";
@@ -98,7 +98,9 @@ namespace QuanLyDiem
             else
                 rdNu.Checked = true;
             txtMaSV.Enabled = false;
+            btnHuy.Enabled = true;
         }
+
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -122,22 +124,36 @@ namespace QuanLyDiem
         private void btnThem_Click(object sender, EventArgs e)
         {
             ResetValues();
+            btnThem.Enabled = false;
             txtMaSV.Focus();
             btnLuu.Enabled = true;
-            btnXoa.Enabled = false;        
+            btnXoa.Enabled = false;
             GridViewSinhVien.Enabled = false;
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            btnXoa.Enabled = false;
-            string sql;
+            btnXoa.Enabled = true;
+
+            int s2 = Convert.ToInt32(DAO.GetFieldValues("select SiSo from Lop where MaLop='" + cmbMaLop.SelectedValue + "'"));
+            if (s2 >= 80)
+            {
+                MessageBox.Show("đã quá số lượng sinh viên", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             if (txtMaSV.Text == "")
             {
-                MessageBox.Show("Bạn không được để trống mã sinh viên");
+                MessageBox.Show("Bạn phải nhập mã sinh viên");
+                txtMaSV.Focus();
+                return;
+            }
+            if (txtMaSV.Text.Length > 10)
+            {
+                MessageBox.Show("Vui lòng nhập lại mã sinh viên", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaSV.Text = "";
                 txtMaSV.Focus();
                 return;
             }
             if (txtTenSV.Text == "")
+
             {
                 MessageBox.Show("Bạn không được để trống tên sinh viên");
                 txtTenSV.Focus();
@@ -216,7 +232,7 @@ namespace QuanLyDiem
                 GioiTinh = "Nữ";
             }
 
-            string s1 = " select MaSV from SinhVien where MaSV =N'" + txtMaSV.Text.Trim() + "'";
+            string s1 = " select MaSV from SinhVien where MaSV ='" + txtMaSV.Text.Trim() + "'";
             DAO.OpenConnection();
             if (DAO.CheckKeyExist(s1))
             {
@@ -225,35 +241,29 @@ namespace QuanLyDiem
                 txtMaSV.Focus();
                 return;
             }
-            else
+            else if (s2 < 80)
             {
+
                 sql = " insert into SinhVien  values('" + txtMaSV.Text.Trim() + "',N'" + txtTenSV.Text.Trim() + "','" + cmbMaKhoa.SelectedValue.ToString() + "','" + cmbMaLop.SelectedValue.ToString() + "','"
-                   + DAO.ConvertDateTime(mtbNgaySinh.Text) + "',N'" + GioiTinh + "','" + cmbMaQue.SelectedValue.ToString() + "','" + cmbMaDanToc.SelectedValue.ToString() + "','" + cmbMaChuyenNganh.SelectedValue.ToString()
-                   + "','" + cmbMaHDT.SelectedValue.ToString() + "','" + cmbMaChucVu.SelectedValue.ToString() + "')";
-                //MessageBox.Show(sql);
-                //cập nhật  sĩ số
+               + DAO.ConvertDateTime(mtbNgaySinh.Text) + "',N'" + GioiTinh + "','" + cmbMaQue.SelectedValue.ToString() + "','" + cmbMaDanToc.SelectedValue.ToString() + "','" + cmbMaChuyenNganh.SelectedValue.ToString()
+               + "','" + cmbMaHDT.SelectedValue.ToString() + "','" + cmbMaChucVu.SelectedValue.ToString() + "')";
+                MessageBox.Show(sql);
                 string sql1 = " update Lop set SiSo = SiSo +1 WHERE MaLop = '" + cmbMaLop.SelectedValue + "'";
                 DAO.RunSql(sql1);
-                int sl = Convert.ToInt32(DAO.GetFieldValues(" select SiSo from Lop where MaLop = '" + cmbMaLop.SelectedValue + "'"));
-                //MessageBox.Show(" Bạn đã thêm mới thành công, sĩ số sau khi cập nhật của phòng '" + cmbMaLop.Text + "' là " + sl, " thông báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                SqlCommand cmd = new SqlCommand(sql, DAO.con);// khai báo đổi tượng command
-                cmd.CommandText = sql; // gán câu truy vấn
-                cmd.Connection = DAO.con;
-                cmd.ExecuteNonQuery();
+                s2 = Convert.ToInt32(DAO.GetFieldValues(" select SiSo from Lop where MaLop = '" + cmbMaLop.SelectedValue + "'"));
+                MessageBox.Show(" Bạn đã thêm mới thành công, sĩ số sau khi cập nhật của phòng '" + cmbMaLop.Text + "' là " + s2, " thông báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DAO.RunSql(sql);
                 DAO.CloseConnection();
-
                 LoadDatatogriview();
-
                 DAO.CloseConnection();
                 btnLuu.Enabled = false;
                 txtMaSV.Enabled = false;
+                btnThem.Enabled = true;
             }
+
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
-            //string GioiTinh;
-
             if (tblSinhVien.Rows.Count == 0)
             {
                 MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -264,7 +274,7 @@ namespace QuanLyDiem
                 MessageBox.Show("Chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            string sql;
+
             if (txtTenSV.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn phải nhập tên sinh viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -332,18 +342,15 @@ namespace QuanLyDiem
                    + "',MaQue='" + cmbMaQue.SelectedValue.ToString() +
                    "',MaDanToc='" + cmbMaDanToc.SelectedValue.ToString() + "',MaChuyenNganh='" + cmbMaChuyenNganh.SelectedValue.ToString() + "',MaHDT='" + cmbMaHDT.SelectedValue.ToString() + "',MaChucVu='" + cmbMaChucVu.SelectedValue.ToString() +
                    "' WHERE MaSV='" + txtMaSV.Text + "'";
-            //MessageBox.Show(sql);
             DAO.OpenConnection();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = sql;
-            cmd.Connection = DAO.con;
-            cmd.ExecuteNonQuery();//thực thi câu lệnh
+            DAO.RunSql(sql);
             DAO.CloseConnection();
             LoadDatatogriview();
+
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
+            int s1 = Convert.ToInt32(DAO.GetFieldValues("select SiSo from Lop where MaLop='" + cmbMaLop.SelectedValue + "'"));
             if (tblSinhVien.Rows.Count == 0)
             {
                 MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -354,29 +361,45 @@ namespace QuanLyDiem
                 MessageBox.Show("Chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            string sql = "select MaSV from Diem where MaSV='" + txtMaSV.Text.Trim() + "'";
-            if (DAO.CheckKeyExist(sql) == true)
+            string s11 = "select MaSV from Diem where MaSV='" + txtMaSV.Text.Trim() + "'";
+            if (DAO.CheckKeyExist(s11) == true)
                 MessageBox.Show("Bạn không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
+                if (s1 > 0)
                 {
-                    sql = " delete from SinhVien where MaSV='" + txtMaSV.Text + "'";
-                    //cập nhật sĩ số khi xóa sinh viên
-                    String sql1 = " update Lop set SiSo = SiSo -1 WHERE MaLop = '" + cmbMaLop.SelectedValue + "'";
-                    DAO.RunSql(sql1);
-                    int s2 = Convert.ToInt32(DAO.GetFieldValues(" select SiSo from Lop where MaLop = '" + cmbMaLop.SelectedValue + "'"));
-                    MessageBox.Show(" Sĩ số sau khi cập nhật của lớp '" + cmbMaLop.Text + "' là " + s2, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DAO.OpenConnection();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = sql;
-                    cmd.Connection = DAO.con;
-                    cmd.ExecuteNonQuery();
-                    DAO.CloseConnection();
-                    ResetValues();
-                    LoadDatatogriview();
-                    //LoadDatatogriview();
-                    // update sinh viên giảm xuống
+
+                    if (MessageBox.Show("bạn có muốn xóa không?", "thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+
+                        sql = " delete from SinhVien where MaSV='" + txtMaSV.Text + "'";
+                        String sql1 = " update Lop set SiSo = SiSo -1 WHERE MaLop = '" + cmbMaLop.SelectedValue + "'";
+                        DAO.RunSql(sql1);
+                        s1 = Convert.ToInt32(DAO.GetFieldValues(" select SiSo from Lop where MaLop = '" + cmbMaLop.SelectedValue + "'"));
+                        MessageBox.Show(" Sĩ số sau khi cập nhật của lớp '" + cmbMaLop.Text + "' là " + s1, " thông báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DAO.OpenConnection();
+                        DAO.RunSql(sql);
+                        ResetValues();
+                        LoadDatatogriview();
+                    }
+                    if (s1 == 0)
+                    {
+                        string sql = DAO.GetFieldValues(" select MaLop from Lop where SiSo = " + s1 + "");
+                        if (MessageBox.Show("sĩ số lớp bằng 0, Bạn có muốn xóa lớp không", "thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            string ss = " select MaSV from SinhVien where MaLop ='" + sql + "'";
+                            if (DAO.CheckKeyExist(ss) == false)
+                            {
+                                string s = "delete from Lop where MaLop='" + sql + "'";
+                                MessageBox.Show(s);
+                                DAO.OpenConnection();
+                                DAO.RunSql(s);
+                                DAO.CloseConnection();
+                                ResetValues();
+                                LoadDatatogriview();
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -390,6 +413,7 @@ namespace QuanLyDiem
             btnLuu.Enabled = false;
             txtMaSV.Enabled = false;
             GridViewSinhVien.Enabled = true;
+
         }
         private void btnHienThi_Click(object sender, EventArgs e)
         {
@@ -416,6 +440,7 @@ namespace QuanLyDiem
             }
             cbMaLop.SelectedIndex = -1;
             cbMaLop.Focus();
+            ResetValues();
             return;
         }
         private void btnTaiLai_Click(object sender, EventArgs e)
@@ -423,6 +448,10 @@ namespace QuanLyDiem
             cbMaLop.SelectedIndex = -1;
             btnTaiLai.Enabled = false;
             btnTaiLai.Enabled = true;
+            ResetValues();
+            LoadDatatogriview();
+            btnLuu.Enabled = false;
+            btnHuy.Enabled = false;
         }
         private void cmbMaKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {

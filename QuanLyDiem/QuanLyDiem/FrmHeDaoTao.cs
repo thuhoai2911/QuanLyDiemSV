@@ -35,6 +35,10 @@ namespace QuanLyDiem
                 sql = "SELECT * FROM HeDaoTao";
                 tblHeDaoTao = DAO.GetDataToTable(sql);
                 GridViewHeDaoTao.DataSource = tblHeDaoTao;
+                // Không cho phép thêm mới dữ liệu trực tiếp trên lưới
+                GridViewHeDaoTao.AllowUserToAddRows = false;
+                // Không cho phép sửa dữ liệu trực tiếp trên lưới
+                GridViewHeDaoTao.EditMode = DataGridViewEditMode.EditProgrammatically;
                 DAO.CloseConnection();
             }
             catch (Exception ex)

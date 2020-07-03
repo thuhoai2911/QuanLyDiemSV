@@ -42,7 +42,6 @@
             this.TenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridViewTimKiem = new System.Windows.Forms.DataGridView();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             this.cmbQue = new System.Windows.Forms.ComboBox();
             this.cmbChuyenNganh = new System.Windows.Forms.ComboBox();
             this.cmbKhoa = new System.Windows.Forms.ComboBox();
@@ -50,6 +49,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnLamMoi = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewTimKiem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,9 +58,9 @@
             // 
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(536, 594);
+            this.btnThoat.Location = new System.Drawing.Point(549, 557);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(96, 63);
+            this.btnThoat.Size = new System.Drawing.Size(105, 70);
             this.btnThoat.TabIndex = 78;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -162,11 +163,11 @@
             this.MaChuyenNganh,
             this.MaHDT,
             this.MaChucVu});
-            this.GridViewTimKiem.Location = new System.Drawing.Point(78, 389);
+            this.GridViewTimKiem.Location = new System.Drawing.Point(110, 334);
             this.GridViewTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GridViewTimKiem.Name = "GridViewTimKiem";
             this.GridViewTimKiem.RowHeadersWidth = 62;
-            this.GridViewTimKiem.Size = new System.Drawing.Size(1054, 197);
+            this.GridViewTimKiem.Size = new System.Drawing.Size(962, 197);
             this.GridViewTimKiem.TabIndex = 77;
             // 
             // MaSV
@@ -177,22 +178,6 @@
             this.MaSV.MinimumWidth = 8;
             this.MaSV.Name = "MaSV";
             this.MaSV.Width = 60;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.Silver;
-            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiem.Location = new System.Drawing.Point(512, 315);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(150, 48);
-            this.btnTimKiem.TabIndex = 76;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTimKiem.UseVisualStyleBackColor = false;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // cmbQue
             // 
@@ -271,15 +256,45 @@
             this.label1.TabIndex = 72;
             this.label1.Text = "Quê";
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
+            this.btnLamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLamMoi.Location = new System.Drawing.Point(813, 216);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(114, 66);
+            this.btnLamMoi.TabIndex = 84;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
+            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimKiem.Location = new System.Drawing.Point(813, 123);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(115, 66);
+            this.btnTimKiem.TabIndex = 114;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
             // FrmTimKiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1212, 675);
+            this.ClientSize = new System.Drawing.Size(1212, 651);
+            this.Controls.Add(this.btnTimKiem);
+            this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.GridViewTimKiem);
-            this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.cmbQue);
             this.Controls.Add(this.cmbChuyenNganh);
             this.Controls.Add(this.cmbKhoa);
@@ -312,7 +327,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSV;
         private System.Windows.Forms.DataGridView GridViewTimKiem;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
-        private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.ComboBox cmbQue;
         private System.Windows.Forms.ComboBox cmbChuyenNganh;
         private System.Windows.Forms.ComboBox cmbKhoa;
@@ -320,5 +334,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.Button btnTimKiem;
     }
 }

@@ -22,15 +22,14 @@ namespace QuanLyDiem
         private void FrmInTKB_Load(object sender, EventArgs e)
         {
             DAO.OpenConnection();
-            DAO.FillDataToCombo("SELECT MaLop FROM Thoi_Khoa_Bieu group by(MaLop)", cmbLop,"MaLop", "MaLop");
+            DAO.FillDataToCombo("SELECT MaLop FROM Thoi_Khoa_Bieu group by(MaLop)", cmbLop, "MaLop", "MaLop");
             cmbLop.SelectedIndex = -1;
             LoadDataToGridView();
-            DAO.FillDataToCombo("SELECT HocKy  FROM Thoi_Khoa_Bieu  group by(HocKy) ",cmbHocKy, "HocKy", "HocKy");
+            DAO.FillDataToCombo("SELECT HocKy  FROM Thoi_Khoa_Bieu  group by(HocKy) ", cmbHocKy, "HocKy", "HocKy");
             cmbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cmbHocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cmbHocKy.SelectedIndex = -1;
             cmbLop.SelectedIndexChanged += cmbLop_SelectedIndexChanged;
-            cmbHocKy.SelectedIndexChanged += cmbHocKy_SelectedIndexChanged;
             DAO.CloseConnection();
         }
         private void LoadDataToGridView()
@@ -54,18 +53,16 @@ namespace QuanLyDiem
                 DAO.CloseConnection();
             }
         }
-       private void LoadDataTKB()
+        private void LoadDataTKB()
         {
             string str;
             str = "SELECT HocKy FROM Thoi_Khoa_Bieu WHERE MaLop = '" + cmbLop.SelectedValue + "'";
             cmbHocKy.Text = DAO.GetFieldValues(str);
         }
-
         private void btnThoat_Click(object sender, EventArgs e)
-        {        
+        {
             this.Close();
         }
-
         private void btnIn_Click(object sender, EventArgs e)
         {
             LoadDataToGridView();
@@ -149,7 +146,7 @@ namespace QuanLyDiem
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string sql;
-            if ((cmbLop.Text == "") && (cmbHocKy.Text == "") )
+            if ((cmbLop.Text == "") && (cmbHocKy.Text == ""))
             {
                 MessageBox.Show("Hãy chọn một điều kiện tìm kiếm!!!", "Yêu cầu nhập Lớp,Học kỳ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -163,13 +160,8 @@ namespace QuanLyDiem
             {
                 sql = sql + " AND HocKy Like '%" + cmbHocKy.SelectedValue + "%'";
             }
-            tblInTKB = DAO.GetDataToTable(sql); 
+            tblInTKB = DAO.GetDataToTable(sql);
             dataGridView1.DataSource = tblInTKB;
-        }
-
-        private void cmbHocKy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

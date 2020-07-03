@@ -67,11 +67,11 @@
             this.clmHocKy,
             this.clmLanThi,
             this.clmDiem});
-            this.GridViewInBangDiemSV.Location = new System.Drawing.Point(55, 346);
+            this.GridViewInBangDiemSV.Location = new System.Drawing.Point(51, 348);
             this.GridViewInBangDiemSV.Name = "GridViewInBangDiemSV";
             this.GridViewInBangDiemSV.RowHeadersWidth = 62;
             this.GridViewInBangDiemSV.RowTemplate.Height = 28;
-            this.GridViewInBangDiemSV.Size = new System.Drawing.Size(831, 213);
+            this.GridViewInBangDiemSV.Size = new System.Drawing.Size(831, 194);
             this.GridViewInBangDiemSV.TabIndex = 66;
             // 
             // clmMaSV
@@ -126,9 +126,9 @@
             // 
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(708, 592);
+            this.btnThoat.Location = new System.Drawing.Point(724, 565);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(96, 52);
+            this.btnThoat.Size = new System.Drawing.Size(96, 66);
             this.btnThoat.TabIndex = 84;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -139,9 +139,9 @@
             // 
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLamMoi.Location = new System.Drawing.Point(460, 592);
+            this.btnLamMoi.Location = new System.Drawing.Point(672, 172);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(114, 52);
+            this.btnLamMoi.Size = new System.Drawing.Size(114, 68);
             this.btnLamMoi.TabIndex = 83;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -152,9 +152,9 @@
             // 
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
             this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIn.Location = new System.Drawing.Point(592, 592);
+            this.btnIn.Location = new System.Drawing.Point(593, 565);
             this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(90, 52);
+            this.btnIn.Size = new System.Drawing.Size(90, 66);
             this.btnIn.TabIndex = 82;
             this.btnIn.Text = "In";
             this.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -165,6 +165,7 @@
             // 
             this.groupBox1.Controls.Add(this.btnTimKiem);
             this.groupBox1.Controls.Add(this.txtTenMon);
+            this.groupBox1.Controls.Add(this.btnLamMoi);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtLanThi);
             this.groupBox1.Controls.Add(this.label2);
@@ -177,25 +178,31 @@
             this.groupBox1.Controls.Add(this.txtMaSV);
             this.groupBox1.Location = new System.Drawing.Point(52, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(831, 288);
+            this.groupBox1.Size = new System.Drawing.Size(831, 283);
             this.groupBox1.TabIndex = 98;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(386, 219);
+            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
+            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimKiem.Location = new System.Drawing.Point(503, 172);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(96, 46);
-            this.btnTimKiem.TabIndex = 112;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Size = new System.Drawing.Size(119, 68);
+            this.btnTimKiem.TabIndex = 113;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTenMon
             // 
             this.txtTenMon.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtTenMon.Location = new System.Drawing.Point(623, 164);
+            this.txtTenMon.Location = new System.Drawing.Point(620, 108);
             this.txtTenMon.Name = "txtTenMon";
             this.txtTenMon.Size = new System.Drawing.Size(166, 26);
             this.txtTenMon.TabIndex = 110;
@@ -204,7 +211,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(504, 159);
+            this.label3.Location = new System.Drawing.Point(501, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 30);
             this.label3.TabIndex = 108;
@@ -212,9 +219,9 @@
             // 
             // txtLanThi
             // 
-            this.txtLanThi.Location = new System.Drawing.Point(623, 111);
+            this.txtLanThi.Location = new System.Drawing.Point(315, 214);
             this.txtLanThi.Name = "txtLanThi";
-            this.txtLanThi.Size = new System.Drawing.Size(166, 26);
+            this.txtLanThi.Size = new System.Drawing.Size(121, 26);
             this.txtLanThi.TabIndex = 111;
             this.txtLanThi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLanThi_KeyPress);
             // 
@@ -222,7 +229,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(504, 107);
+            this.label2.Location = new System.Drawing.Point(196, 210);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 30);
             this.label2.TabIndex = 109;
@@ -232,7 +239,7 @@
             // 
             this.cmbMaMon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMaMon.FormattingEnabled = true;
-            this.cmbMaMon.Location = new System.Drawing.Point(318, 162);
+            this.cmbMaMon.Location = new System.Drawing.Point(315, 106);
             this.cmbMaMon.Name = "cmbMaMon";
             this.cmbMaMon.Size = new System.Drawing.Size(121, 28);
             this.cmbMaMon.TabIndex = 107;
@@ -242,7 +249,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(198, 159);
+            this.label4.Location = new System.Drawing.Point(195, 103);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 30);
             this.label4.TabIndex = 106;
@@ -252,7 +259,7 @@
             // 
             this.cmbMaLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMaLop.FormattingEnabled = true;
-            this.cmbMaLop.Location = new System.Drawing.Point(318, 109);
+            this.cmbMaLop.Location = new System.Drawing.Point(315, 158);
             this.cmbMaLop.Name = "cmbMaLop";
             this.cmbMaLop.Size = new System.Drawing.Size(121, 28);
             this.cmbMaLop.TabIndex = 105;
@@ -261,7 +268,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(200, 105);
+            this.label6.Location = new System.Drawing.Point(197, 158);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 30);
             this.label6.TabIndex = 104;
@@ -303,10 +310,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 670);
+            this.ClientSize = new System.Drawing.Size(933, 648);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnIn);
             this.Controls.Add(this.GridViewInBangDiemSV);
             this.Name = "FrmInBangDiemSV";
@@ -321,17 +327,10 @@
 
         #endregion
         private System.Windows.Forms.DataGridView GridViewInBangDiemSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaMon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmHocKy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmLanThi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiem;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtTenMon;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtLanThi;
@@ -343,5 +342,12 @@
         private System.Windows.Forms.RadioButton rdoTim;
         private System.Windows.Forms.RadioButton rdoMaSV;
         private System.Windows.Forms.TextBox txtMaSV;
+        private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaMon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmHocKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmLanThi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiem;
     }
 }

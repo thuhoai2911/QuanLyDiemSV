@@ -38,6 +38,7 @@ namespace QuanLyDiem
             {
                 DAO.OpenConnection();
                 string sql;
+                btnLamMoi.Enabled = false;
                 sql = "SELECT * FROM SinhVien";
                 tblSV = DAO.GetDataToTable(sql);
                 GridViewTimKiem.DataSource = tblSV;
@@ -82,7 +83,7 @@ namespace QuanLyDiem
             {
                 sql = sql + " AND c.MaQue Like '%" + cmbQue.SelectedValue + "%'";
             }
-
+            btnLamMoi.Enabled = true;
             tblSV = DAO.GetDataToTable(sql);
             GridViewTimKiem.DataSource = tblSV;
         }
@@ -96,6 +97,12 @@ namespace QuanLyDiem
         {
             string sql = "select * from ChuyenNganh where MaKhoa=N'" + cmbKhoa.SelectedValue + "'";
             DAO.FillDataToCombo(sql, cmbChuyenNganh, "MaChuyenNganh", "TenChuyenNganh");
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            ResetValues();
+            LoadDataToGridView();
         }
     }
 }

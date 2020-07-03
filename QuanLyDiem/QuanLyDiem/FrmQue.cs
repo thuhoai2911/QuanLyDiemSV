@@ -20,7 +20,6 @@ namespace QuanLyDiem
         public FrmQue()
         {
             InitializeComponent();
-
         }
         private void FrmQue_Load(object sender, EventArgs e)
         {
@@ -31,13 +30,16 @@ namespace QuanLyDiem
         }
         public void LoadDataToGrivew()
         {
-
             try
             {
                 DAO.OpenConnection();
                 string sql = "select * from Que";
                 tblQue = DAO.GetDataToTable(sql);
                 GridViewQue.DataSource = tblQue;
+                // Không cho phép thêm mới dữ liệu trực tiếp trên lưới
+                GridViewQue.AllowUserToAddRows = false;
+                // Không cho phép sửa dữ liệu trực tiếp trên lưới
+                GridViewQue.EditMode = DataGridViewEditMode.EditProgrammatically;
             }
             catch (Exception ex)
             {
@@ -47,7 +49,6 @@ namespace QuanLyDiem
             {
                 DAO.CloseConnection();
             }
-
         }
 
         private void GridViewQue_CellClick(object sender, DataGridViewCellEventArgs e)

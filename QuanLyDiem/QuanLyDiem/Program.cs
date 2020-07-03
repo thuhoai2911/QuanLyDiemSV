@@ -15,8 +15,9 @@ namespace QuanLyDiem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FrmDanToc());
-            Application.Run(new FrmMain());
+            FrmMain f0 = new FrmMain();
+            f0.StartPosition = FormStartPosition.CenterScreen;
+            Application.Run(f0);
         }
     }
 }

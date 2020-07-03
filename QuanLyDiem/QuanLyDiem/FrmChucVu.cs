@@ -45,7 +45,6 @@ namespace QuanLyDiem
                 DAO.CloseConnection();
             }
         }
-
         private void GridViewChucVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DAO.OpenConnection();
@@ -136,7 +135,6 @@ namespace QuanLyDiem
             btnHuy.Enabled = false;
             DAO.CloseConnection();
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string sql;

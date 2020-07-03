@@ -101,13 +101,12 @@
             this.cmbHocKy.Name = "cmbHocKy";
             this.cmbHocKy.Size = new System.Drawing.Size(180, 28);
             this.cmbHocKy.TabIndex = 4;
-            this.cmbHocKy.SelectedIndexChanged += new System.EventHandler(this.cmbHocKy_SelectedIndexChanged);
             // 
             // button1
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(638, 450);
+            this.button1.Location = new System.Drawing.Point(652, 449);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 61);
             this.button1.TabIndex = 86;
@@ -120,7 +119,7 @@
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(383, 450);
+            this.button2.Location = new System.Drawing.Point(397, 449);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 61);
             this.button2.TabIndex = 85;
@@ -215,7 +214,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1281, 542);
+            this.ClientSize = new System.Drawing.Size(1102, 542);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);

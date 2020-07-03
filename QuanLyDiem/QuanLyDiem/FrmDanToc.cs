@@ -54,7 +54,6 @@ namespace QuanLyDiem
             txtTenDanToc.Text = GridViewDanToc.CurrentRow.Cells["clmTenDanToc"].Value.ToString();
             txtMaDanToc.Enabled = false;
         }
-
         private void ResetValues()
         {
             txtMaDanToc.Text = "";
@@ -72,7 +71,6 @@ namespace QuanLyDiem
             txtMaDanToc.Focus();
             return;
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             string sql;
@@ -113,7 +111,7 @@ namespace QuanLyDiem
                 return;
             }
             sql = "select MaDanToc from SinhVien where MaDanToc='" + txtMaDanToc.Text.Trim() + "'";
-            if (DAO.CheckKeyExist(sql))
+            if (DAO.CheckKeyExist(sql)) //không thể xóa nếu tồn tại trong bảng SinhVien
                 MessageBox.Show("Bạn không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
@@ -126,7 +124,6 @@ namespace QuanLyDiem
                 }
             }
         }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             DAO.OpenConnection();
@@ -164,7 +161,6 @@ namespace QuanLyDiem
             txtMaDanToc.Enabled = false;
             DAO.CloseConnection();
         }
-
         private void btnHuy_Click(object sender, EventArgs e)
         {
             ResetValues();
@@ -176,7 +172,6 @@ namespace QuanLyDiem
             btnLuu.Enabled = false;
             txtMaDanToc.Enabled = false;
         }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
