@@ -48,6 +48,7 @@
             // 
             // GridViewDanToc
             // 
+            this.GridViewDanToc.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.GridViewDanToc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewDanToc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaDanToc,
@@ -158,12 +159,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(234, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(258, 38);
+            this.label2.Size = new System.Drawing.Size(307, 38);
             this.label2.TabIndex = 66;
-            this.label2.Text = "Danh sách dân tộc";
+            this.label2.Text = "DANH SÁCH DÂN TỘC";
             // 
             // txtTenDanToc
             // 
@@ -216,6 +217,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtMaDanToc);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmDanToc";
             this.Text = "FrmDanToc";

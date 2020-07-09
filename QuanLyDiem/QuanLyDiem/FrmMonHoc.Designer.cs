@@ -62,11 +62,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(210, 12);
+            this.label3.Location = new System.Drawing.Point(210, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(269, 38);
+            this.label3.Size = new System.Drawing.Size(321, 38);
             this.label3.TabIndex = 70;
-            this.label3.Text = "Danh sách Môn học";
+            this.label3.Text = "DANH SÁCH MÔN HỌC";
             // 
             // label2
             // 
@@ -119,6 +119,7 @@
             // 
             // GridViewMonHoc
             // 
+            this.GridViewMonHoc.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.GridViewMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewMonHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaMon,
@@ -253,6 +254,7 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmMonHoc";
             this.Text = "FrmMonHoc";

@@ -32,7 +32,7 @@ namespace QuanLyDiem
 
         private void điểmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmDiem f3 = new FrmDiem();
+            FrmLop f3 = new FrmLop();
             f3.StartPosition = FormStartPosition.CenterScreen;
             f3.Show();
         }
@@ -41,13 +41,6 @@ namespace QuanLyDiem
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình không", "Hỏi Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 this.Close();
-        }
-
-        private void lớpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmLop f4 = new FrmLop();
-            f4.StartPosition = FormStartPosition.CenterScreen;
-            f4.Show();
         }
 
         private void sinhViênToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,13 +85,6 @@ namespace QuanLyDiem
             f10.Show();
         }
 
-        private void mônHọcToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmMonHoc f12 = new FrmMonHoc();
-            f12.StartPosition = FormStartPosition.CenterScreen;
-            f12.Show();
-        }
-
         private void phòngHọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmPhongHoc f14 = new FrmPhongHoc();
@@ -125,6 +111,27 @@ namespace QuanLyDiem
             FrmInTKB f18 = new FrmInTKB();
             f18.StartPosition = FormStartPosition.CenterScreen;
             f18.Show();
+        }
+
+        private void mônHọcToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmMonHoc f12 = new FrmMonHoc();
+            f12.StartPosition = FormStartPosition.CenterScreen;
+            f12.Show();
+        }
+
+        private void lớpToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FrmLop f4 = new FrmLop();
+            f4.StartPosition = FormStartPosition.CenterScreen;
+            f4.Show();
+        }
+
+        private void cậpNhậtĐiểmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmDiem f2 = new FrmDiem();
+            f2.StartPosition = FormStartPosition.CenterScreen;
+            f2.Show();
         }
     }
 }

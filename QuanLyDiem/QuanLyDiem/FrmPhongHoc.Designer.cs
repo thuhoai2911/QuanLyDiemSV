@@ -48,15 +48,16 @@
             // 
             // GridViewPhongHoc
             // 
+            this.GridViewPhongHoc.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.GridViewPhongHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewPhongHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaPhong,
             this.clmTenPhong});
-            this.GridViewPhongHoc.Location = new System.Drawing.Point(441, 102);
+            this.GridViewPhongHoc.Location = new System.Drawing.Point(104, 166);
             this.GridViewPhongHoc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GridViewPhongHoc.Name = "GridViewPhongHoc";
             this.GridViewPhongHoc.RowHeadersWidth = 62;
-            this.GridViewPhongHoc.Size = new System.Drawing.Size(435, 228);
+            this.GridViewPhongHoc.Size = new System.Drawing.Size(574, 202);
             this.GridViewPhongHoc.TabIndex = 78;
             this.GridViewPhongHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewPhongHoc_CellClick);
             // 
@@ -78,27 +79,27 @@
             // 
             // txtTenPhong
             // 
-            this.txtTenPhong.Location = new System.Drawing.Point(194, 167);
+            this.txtTenPhong.Location = new System.Drawing.Point(499, 109);
             this.txtTenPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenPhong.Name = "txtTenPhong";
-            this.txtTenPhong.Size = new System.Drawing.Size(199, 26);
+            this.txtTenPhong.Size = new System.Drawing.Size(179, 26);
             this.txtTenPhong.TabIndex = 86;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(318, 35);
+            this.label3.Location = new System.Drawing.Point(234, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(258, 38);
+            this.label3.Size = new System.Drawing.Size(308, 38);
             this.label3.TabIndex = 77;
-            this.label3.Text = "Quản lý Phòng học";
+            this.label3.Text = "QUẢN LÝ PHÒNG HỌC";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(76, 108);
+            this.label1.Location = new System.Drawing.Point(99, 104);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 30);
@@ -109,7 +110,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(76, 162);
+            this.label2.Location = new System.Drawing.Point(381, 104);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 30);
@@ -120,7 +121,7 @@
             // 
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(718, 382);
+            this.btnThoat.Location = new System.Drawing.Point(660, 402);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(96, 63);
             this.btnThoat.TabIndex = 80;
@@ -133,7 +134,7 @@
             // 
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuy.Location = new System.Drawing.Point(592, 382);
+            this.btnHuy.Location = new System.Drawing.Point(534, 402);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(93, 63);
             this.btnHuy.TabIndex = 81;
@@ -146,7 +147,7 @@
             // 
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(470, 382);
+            this.btnLuu.Location = new System.Drawing.Point(412, 402);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(93, 63);
             this.btnLuu.TabIndex = 82;
@@ -159,7 +160,7 @@
             // 
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(345, 382);
+            this.btnXoa.Location = new System.Drawing.Point(287, 402);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(94, 63);
             this.btnXoa.TabIndex = 83;
@@ -172,7 +173,7 @@
             // 
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(222, 382);
+            this.btnSua.Location = new System.Drawing.Point(164, 402);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(94, 63);
             this.btnSua.TabIndex = 84;
@@ -185,7 +186,7 @@
             // 
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(99, 382);
+            this.btnThem.Location = new System.Drawing.Point(41, 402);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(96, 63);
             this.btnThem.TabIndex = 85;
@@ -196,17 +197,17 @@
             // 
             // txtMaPhong
             // 
-            this.txtMaPhong.Location = new System.Drawing.Point(194, 113);
+            this.txtMaPhong.Location = new System.Drawing.Point(217, 109);
             this.txtMaPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMaPhong.Name = "txtMaPhong";
-            this.txtMaPhong.Size = new System.Drawing.Size(199, 26);
+            this.txtMaPhong.Size = new System.Drawing.Size(111, 26);
             this.txtMaPhong.TabIndex = 79;
             // 
             // FrmPhongHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 492);
+            this.ClientSize = new System.Drawing.Size(800, 492);
             this.Controls.Add(this.GridViewPhongHoc);
             this.Controls.Add(this.txtTenPhong);
             this.Controls.Add(this.label3);

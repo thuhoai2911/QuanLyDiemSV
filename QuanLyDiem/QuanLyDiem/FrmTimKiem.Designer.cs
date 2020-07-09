@@ -58,9 +58,9 @@
             // 
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(549, 557);
+            this.btnThoat.Location = new System.Drawing.Point(387, 517);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(105, 70);
+            this.btnThoat.Size = new System.Drawing.Size(114, 69);
             this.btnThoat.TabIndex = 78;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -163,11 +163,11 @@
             this.MaChuyenNganh,
             this.MaHDT,
             this.MaChucVu});
-            this.GridViewTimKiem.Location = new System.Drawing.Point(110, 334);
+            this.GridViewTimKiem.Location = new System.Drawing.Point(56, 279);
             this.GridViewTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GridViewTimKiem.Name = "GridViewTimKiem";
             this.GridViewTimKiem.RowHeadersWidth = 62;
-            this.GridViewTimKiem.Size = new System.Drawing.Size(962, 197);
+            this.GridViewTimKiem.Size = new System.Drawing.Size(775, 221);
             this.GridViewTimKiem.TabIndex = 77;
             // 
             // MaSV
@@ -182,7 +182,7 @@
             // cmbQue
             // 
             this.cmbQue.FormattingEnabled = true;
-            this.cmbQue.Location = new System.Drawing.Point(486, 249);
+            this.cmbQue.Location = new System.Drawing.Point(273, 219);
             this.cmbQue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbQue.Name = "cmbQue";
             this.cmbQue.Size = new System.Drawing.Size(205, 28);
@@ -191,7 +191,7 @@
             // cmbChuyenNganh
             // 
             this.cmbChuyenNganh.FormattingEnabled = true;
-            this.cmbChuyenNganh.Location = new System.Drawing.Point(486, 186);
+            this.cmbChuyenNganh.Location = new System.Drawing.Point(273, 161);
             this.cmbChuyenNganh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbChuyenNganh.Name = "cmbChuyenNganh";
             this.cmbChuyenNganh.Size = new System.Drawing.Size(205, 28);
@@ -200,7 +200,7 @@
             // cmbKhoa
             // 
             this.cmbKhoa.FormattingEnabled = true;
-            this.cmbKhoa.Location = new System.Drawing.Point(486, 122);
+            this.cmbKhoa.Location = new System.Drawing.Point(273, 105);
             this.cmbKhoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbKhoa.Name = "cmbKhoa";
             this.cmbKhoa.Size = new System.Drawing.Size(205, 28);
@@ -210,46 +210,46 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.LightYellow;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.ForeColor = System.Drawing.Color.Navy;
-            this.label4.Location = new System.Drawing.Point(448, 29);
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(281, 34);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(302, 40);
+            this.label4.Size = new System.Drawing.Size(283, 38);
             this.label4.TabIndex = 69;
             this.label4.Text = "TÌM KIẾM SINH VIÊN";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(268, 188);
+            this.label3.Location = new System.Drawing.Point(73, 155);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(204, 31);
+            this.label3.Size = new System.Drawing.Size(165, 31);
             this.label3.TabIndex = 70;
-            this.label3.Text = "Mã Chuyên Ngành";
+            this.label3.Text = "Chuyên Ngành";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(268, 123);
+            this.label2.Location = new System.Drawing.Point(74, 99);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 31);
+            this.label2.Size = new System.Drawing.Size(65, 31);
             this.label2.TabIndex = 71;
-            this.label2.Text = "Mã Khoa";
+            this.label2.Text = "Khoa";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(268, 251);
+            this.label1.Location = new System.Drawing.Point(74, 213);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 31);
@@ -260,7 +260,7 @@
             // 
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
             this.btnLamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLamMoi.Location = new System.Drawing.Point(813, 216);
+            this.btnLamMoi.Location = new System.Drawing.Point(693, 132);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(114, 66);
             this.btnLamMoi.TabIndex = 84;
@@ -275,7 +275,7 @@
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
             this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiem.Location = new System.Drawing.Point(813, 123);
+            this.btnTimKiem.Location = new System.Drawing.Point(548, 132);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(115, 66);
@@ -289,8 +289,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1212, 651);
+            this.ClientSize = new System.Drawing.Size(882, 598);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnThoat);
@@ -302,6 +301,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmTimKiem";
             this.Text = "FrmTimKiem";

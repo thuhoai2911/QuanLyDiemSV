@@ -184,6 +184,7 @@
             // 
             // GridViewKhoa
             // 
+            this.GridViewKhoa.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.GridViewKhoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewKhoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaKhoa,
@@ -282,9 +283,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(312, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 38);
+            this.label1.Size = new System.Drawing.Size(264, 38);
             this.label1.TabIndex = 69;
-            this.label1.Text = "Danh sách Khoa";
+            this.label1.Text = "DANH SÁCH KHOA";
             // 
             // FrmKhoa
             // 
@@ -309,6 +310,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmKhoa";
             this.Text = "FrmKhoa";

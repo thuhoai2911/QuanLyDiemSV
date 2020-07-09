@@ -40,9 +40,9 @@ namespace QuanLyDiem
                 string sql;
                 sql = " select * from Thoi_Khoa_Bieu";
                 tblInTKB = DAO.GetDataToTable(sql);
-                dataGridView1.DataSource = tblInTKB;
-                dataGridView1.AllowUserToAddRows = false;
-                dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
+                GridViewInTKB.DataSource = tblInTKB;
+                GridViewInTKB.AllowUserToAddRows = false;
+                GridViewInTKB.EditMode = DataGridViewEditMode.EditProgrammatically;
             }
             catch (Exception ex)
             {
@@ -161,7 +161,7 @@ namespace QuanLyDiem
                 sql = sql + " AND HocKy Like '%" + cmbHocKy.SelectedValue + "%'";
             }
             tblInTKB = DAO.GetDataToTable(sql);
-            dataGridView1.DataSource = tblInTKB;
+            GridViewInTKB.DataSource = tblInTKB;
         }
     }
 }

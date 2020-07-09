@@ -28,7 +28,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmThoiKhoaBieu));
-            this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -72,31 +71,18 @@
             this.cmbPhong = new System.Windows.Forms.ComboBox();
             this.GrbCa = new System.Windows.Forms.GroupBox();
             this.txtid = new System.Windows.Forms.TextBox();
+            this.btnThem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewTKB)).BeginInit();
             this.GrbHK.SuspendLayout();
             this.GrbThu.SuspendLayout();
             this.GrbCa.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.Color.White;
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(59, 591);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(96, 63);
-            this.btnThem.TabIndex = 62;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
             // btnSua
             // 
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(224, 591);
+            this.btnSua.Location = new System.Drawing.Point(236, 576);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(94, 63);
             this.btnSua.TabIndex = 63;
@@ -109,7 +95,7 @@
             // 
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(390, 591);
+            this.btnXoa.Location = new System.Drawing.Point(402, 576);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(94, 63);
             this.btnXoa.TabIndex = 64;
@@ -122,7 +108,7 @@
             // 
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(562, 591);
+            this.btnLuu.Location = new System.Drawing.Point(574, 576);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(93, 63);
             this.btnLuu.TabIndex = 65;
@@ -135,7 +121,7 @@
             // 
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuy.Location = new System.Drawing.Point(728, 591);
+            this.btnHuy.Location = new System.Drawing.Point(740, 576);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(93, 63);
             this.btnHuy.TabIndex = 66;
@@ -148,7 +134,7 @@
             // 
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(900, 591);
+            this.btnThoat.Location = new System.Drawing.Point(912, 576);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(96, 63);
             this.btnThoat.TabIndex = 67;
@@ -160,9 +146,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(18, 82);
+            this.label1.Location = new System.Drawing.Point(31, 91);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 30);
@@ -172,9 +158,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(342, 82);
+            this.label2.Location = new System.Drawing.Point(355, 91);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 30);
@@ -184,22 +170,22 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.LightYellow;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.ForeColor = System.Drawing.Color.Navy;
-            this.label3.Location = new System.Drawing.Point(394, 14);
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(394, 22);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(220, 40);
+            this.label3.Size = new System.Drawing.Size(252, 41);
             this.label3.TabIndex = 68;
-            this.label3.Text = "Thời khóa biểu";
+            this.label3.Text = "THỜI KHÓA BIỂU";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label7.BackColor = System.Drawing.SystemColors.Control;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(693, 82);
+            this.label7.Location = new System.Drawing.Point(706, 91);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 30);
@@ -218,7 +204,7 @@
             this.CaHoc,
             this.MaPhong,
             this.id});
-            this.GridViewTKB.Location = new System.Drawing.Point(42, 335);
+            this.GridViewTKB.Location = new System.Drawing.Point(54, 314);
             this.GridViewTKB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GridViewTKB.Name = "GridViewTKB";
             this.GridViewTKB.RowHeadersWidth = 62;
@@ -284,7 +270,7 @@
             // 
             // GrbHK
             // 
-            this.GrbHK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.GrbHK.BackColor = System.Drawing.SystemColors.Control;
             this.GrbHK.Controls.Add(this.rdohk8);
             this.GrbHK.Controls.Add(this.rdohk4);
             this.GrbHK.Controls.Add(this.rdohk6);
@@ -294,7 +280,7 @@
             this.GrbHK.Controls.Add(this.rdohk5);
             this.GrbHK.Controls.Add(this.rdohk1);
             this.GrbHK.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GrbHK.Location = new System.Drawing.Point(24, 180);
+            this.GrbHK.Location = new System.Drawing.Point(36, 155);
             this.GrbHK.Name = "GrbHK";
             this.GrbHK.Size = new System.Drawing.Size(356, 120);
             this.GrbHK.TabIndex = 70;
@@ -304,7 +290,7 @@
             // rdohk8
             // 
             this.rdohk8.AutoSize = true;
-            this.rdohk8.Location = new System.Drawing.Point(300, 55);
+            this.rdohk8.Location = new System.Drawing.Point(285, 69);
             this.rdohk8.Name = "rdohk8";
             this.rdohk8.Size = new System.Drawing.Size(50, 34);
             this.rdohk8.TabIndex = 16;
@@ -315,7 +301,7 @@
             // rdohk4
             // 
             this.rdohk4.AutoSize = true;
-            this.rdohk4.Location = new System.Drawing.Point(300, 26);
+            this.rdohk4.Location = new System.Drawing.Point(285, 40);
             this.rdohk4.Name = "rdohk4";
             this.rdohk4.Size = new System.Drawing.Size(50, 34);
             this.rdohk4.TabIndex = 17;
@@ -326,7 +312,7 @@
             // rdohk6
             // 
             this.rdohk6.AutoSize = true;
-            this.rdohk6.Location = new System.Drawing.Point(166, 55);
+            this.rdohk6.Location = new System.Drawing.Point(151, 69);
             this.rdohk6.Name = "rdohk6";
             this.rdohk6.Size = new System.Drawing.Size(50, 34);
             this.rdohk6.TabIndex = 18;
@@ -337,7 +323,7 @@
             // rdohk7
             // 
             this.rdohk7.AutoSize = true;
-            this.rdohk7.Location = new System.Drawing.Point(234, 55);
+            this.rdohk7.Location = new System.Drawing.Point(219, 69);
             this.rdohk7.Name = "rdohk7";
             this.rdohk7.Size = new System.Drawing.Size(50, 34);
             this.rdohk7.TabIndex = 19;
@@ -348,7 +334,7 @@
             // rdohk2
             // 
             this.rdohk2.AutoSize = true;
-            this.rdohk2.Location = new System.Drawing.Point(166, 26);
+            this.rdohk2.Location = new System.Drawing.Point(151, 40);
             this.rdohk2.Name = "rdohk2";
             this.rdohk2.Size = new System.Drawing.Size(50, 34);
             this.rdohk2.TabIndex = 20;
@@ -359,7 +345,7 @@
             // rdohk3
             // 
             this.rdohk3.AutoSize = true;
-            this.rdohk3.Location = new System.Drawing.Point(234, 26);
+            this.rdohk3.Location = new System.Drawing.Point(219, 40);
             this.rdohk3.Name = "rdohk3";
             this.rdohk3.Size = new System.Drawing.Size(50, 34);
             this.rdohk3.TabIndex = 21;
@@ -370,7 +356,7 @@
             // rdohk5
             // 
             this.rdohk5.AutoSize = true;
-            this.rdohk5.Location = new System.Drawing.Point(99, 55);
+            this.rdohk5.Location = new System.Drawing.Point(84, 69);
             this.rdohk5.Name = "rdohk5";
             this.rdohk5.Size = new System.Drawing.Size(50, 34);
             this.rdohk5.TabIndex = 22;
@@ -381,7 +367,7 @@
             // rdohk1
             // 
             this.rdohk1.AutoSize = true;
-            this.rdohk1.Location = new System.Drawing.Point(99, 26);
+            this.rdohk1.Location = new System.Drawing.Point(84, 40);
             this.rdohk1.Name = "rdohk1";
             this.rdohk1.Size = new System.Drawing.Size(50, 34);
             this.rdohk1.TabIndex = 23;
@@ -391,7 +377,7 @@
             // 
             // GrbThu
             // 
-            this.GrbThu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.GrbThu.BackColor = System.Drawing.SystemColors.Control;
             this.GrbThu.Controls.Add(this.rdothu7);
             this.GrbThu.Controls.Add(this.rdothu6);
             this.GrbThu.Controls.Add(this.rdothu5);
@@ -399,7 +385,7 @@
             this.GrbThu.Controls.Add(this.rdothu3);
             this.GrbThu.Controls.Add(this.rdothu2);
             this.GrbThu.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GrbThu.Location = new System.Drawing.Point(402, 180);
+            this.GrbThu.Location = new System.Drawing.Point(414, 155);
             this.GrbThu.Name = "GrbThu";
             this.GrbThu.Size = new System.Drawing.Size(309, 120);
             this.GrbThu.TabIndex = 71;
@@ -409,7 +395,7 @@
             // rdothu7
             // 
             this.rdothu7.AutoSize = true;
-            this.rdothu7.Location = new System.Drawing.Point(190, 55);
+            this.rdothu7.Location = new System.Drawing.Point(210, 69);
             this.rdothu7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rdothu7.Name = "rdothu7";
             this.rdothu7.Size = new System.Drawing.Size(73, 34);
@@ -421,7 +407,7 @@
             // rdothu6
             // 
             this.rdothu6.AutoSize = true;
-            this.rdothu6.Location = new System.Drawing.Point(116, 55);
+            this.rdothu6.Location = new System.Drawing.Point(136, 69);
             this.rdothu6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rdothu6.Name = "rdothu6";
             this.rdothu6.Size = new System.Drawing.Size(73, 34);
@@ -433,7 +419,7 @@
             // rdothu5
             // 
             this.rdothu5.AutoSize = true;
-            this.rdothu5.Location = new System.Drawing.Point(32, 55);
+            this.rdothu5.Location = new System.Drawing.Point(52, 69);
             this.rdothu5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rdothu5.Name = "rdothu5";
             this.rdothu5.Size = new System.Drawing.Size(84, 34);
@@ -445,7 +431,7 @@
             // rdothu4
             // 
             this.rdothu4.AutoSize = true;
-            this.rdothu4.Location = new System.Drawing.Point(190, 26);
+            this.rdothu4.Location = new System.Drawing.Point(210, 40);
             this.rdothu4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rdothu4.Name = "rdothu4";
             this.rdothu4.Size = new System.Drawing.Size(63, 34);
@@ -457,7 +443,7 @@
             // rdothu3
             // 
             this.rdothu3.AutoSize = true;
-            this.rdothu3.Location = new System.Drawing.Point(116, 26);
+            this.rdothu3.Location = new System.Drawing.Point(136, 40);
             this.rdothu3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rdothu3.Name = "rdothu3";
             this.rdothu3.Size = new System.Drawing.Size(62, 34);
@@ -469,7 +455,7 @@
             // rdothu2
             // 
             this.rdothu2.AutoSize = true;
-            this.rdothu2.Location = new System.Drawing.Point(32, 26);
+            this.rdothu2.Location = new System.Drawing.Point(52, 40);
             this.rdothu2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rdothu2.Name = "rdothu2";
             this.rdothu2.Size = new System.Drawing.Size(70, 34);
@@ -503,7 +489,7 @@
             // rdoca3
             // 
             this.rdoca3.AutoSize = true;
-            this.rdoca3.Location = new System.Drawing.Point(208, 26);
+            this.rdoca3.Location = new System.Drawing.Point(208, 36);
             this.rdoca3.Name = "rdoca3";
             this.rdoca3.Size = new System.Drawing.Size(50, 34);
             this.rdoca3.TabIndex = 21;
@@ -514,7 +500,7 @@
             // rdoca2
             // 
             this.rdoca2.AutoSize = true;
-            this.rdoca2.Location = new System.Drawing.Point(147, 26);
+            this.rdoca2.Location = new System.Drawing.Point(147, 36);
             this.rdoca2.Name = "rdoca2";
             this.rdoca2.Size = new System.Drawing.Size(50, 34);
             this.rdoca2.TabIndex = 20;
@@ -525,7 +511,7 @@
             // rdoca1
             // 
             this.rdoca1.AutoSize = true;
-            this.rdoca1.Location = new System.Drawing.Point(88, 26);
+            this.rdoca1.Location = new System.Drawing.Point(88, 36);
             this.rdoca1.Name = "rdoca1";
             this.rdoca1.Size = new System.Drawing.Size(50, 34);
             this.rdoca1.TabIndex = 23;
@@ -536,7 +522,7 @@
             // cmbLop
             // 
             this.cmbLop.FormattingEnabled = true;
-            this.cmbLop.Location = new System.Drawing.Point(111, 80);
+            this.cmbLop.Location = new System.Drawing.Point(124, 89);
             this.cmbLop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbLop.Name = "cmbLop";
             this.cmbLop.Size = new System.Drawing.Size(180, 28);
@@ -545,7 +531,7 @@
             // cmbMon
             // 
             this.cmbMon.FormattingEnabled = true;
-            this.cmbMon.Location = new System.Drawing.Point(459, 80);
+            this.cmbMon.Location = new System.Drawing.Point(472, 89);
             this.cmbMon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbMon.Name = "cmbMon";
             this.cmbMon.Size = new System.Drawing.Size(180, 28);
@@ -554,7 +540,7 @@
             // cmbPhong
             // 
             this.cmbPhong.FormattingEnabled = true;
-            this.cmbPhong.Location = new System.Drawing.Point(824, 80);
+            this.cmbPhong.Location = new System.Drawing.Point(837, 89);
             this.cmbPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbPhong.Name = "cmbPhong";
             this.cmbPhong.Size = new System.Drawing.Size(180, 28);
@@ -562,14 +548,14 @@
             // 
             // GrbCa
             // 
-            this.GrbCa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.GrbCa.BackColor = System.Drawing.SystemColors.Control;
             this.GrbCa.Controls.Add(this.rdoca5);
             this.GrbCa.Controls.Add(this.rdoca1);
             this.GrbCa.Controls.Add(this.rdoca2);
             this.GrbCa.Controls.Add(this.rdoca4);
             this.GrbCa.Controls.Add(this.rdoca3);
             this.GrbCa.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GrbCa.Location = new System.Drawing.Point(738, 180);
+            this.GrbCa.Location = new System.Drawing.Point(750, 155);
             this.GrbCa.Name = "GrbCa";
             this.GrbCa.Size = new System.Drawing.Size(267, 120);
             this.GrbCa.TabIndex = 73;
@@ -584,12 +570,25 @@
             this.txtid.Size = new System.Drawing.Size(10, 26);
             this.txtid.TabIndex = 74;
             // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(71, 576);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(96, 63);
+            this.btnThem.TabIndex = 62;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // FrmThoiKhoaBieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1068, 680);
+            this.ClientSize = new System.Drawing.Size(1068, 658);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.GrbCa);
             this.Controls.Add(this.cmbMon);
@@ -608,6 +607,7 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmThoiKhoaBieu";
             this.Text = "FrmThoiKhoaBieu";
@@ -625,8 +625,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnLuu;
@@ -670,5 +668,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CaHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.Button btnThem;
     }
 }

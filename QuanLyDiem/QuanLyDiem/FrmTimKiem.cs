@@ -30,7 +30,7 @@ namespace QuanLyDiem
             DAO.FillDataToCombo("SELECT MaChuyenNganh,TenChuyenNganh  FROM ChuyenNganh", cmbChuyenNganh, "MaChuyenNganh", "MaChuyenNganh");
             DAO.FillDataToCombo("SELECT MaQue,TenQue FROM Que", cmbQue, "MaQue", "TenQue");
             ResetValues();
-            DAO.CloseConnection(); 
+            DAO.CloseConnection();
         }
         private void LoadDataToGridView()
         {

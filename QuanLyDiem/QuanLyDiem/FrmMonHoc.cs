@@ -26,6 +26,9 @@ namespace QuanLyDiem
             btnHuy.Enabled = false;
             txtMaMon.Enabled = false;
             LoadDataToTable();
+            txtMaMon.MaxLength = 10;
+            txtTenMon.MaxLength = 50;
+            txtDVHT.MaxLength = 1;
         }
         private void LoadDataToTable()
         {
@@ -52,7 +55,7 @@ namespace QuanLyDiem
             txtTenMon.Text = "";
             txtDVHT.Text = "";
             GridViewMonHoc.Enabled = true;
-            btnHuy.Enabled = false;
+
         }
 
 
@@ -161,7 +164,7 @@ namespace QuanLyDiem
             }
             string sql = "select MaMon from Diem where MaMon='" + txtMaMon.Text.Trim() + "'";
             string sql1 = "select MaMon from Thoi_Khoa_Bieu where MaMon='" + txtMaMon.Text.Trim() + "'";
-            if (DAO.CheckKeyExist(sql)||DAO.CheckKeyExist(sql1))
+            if (DAO.CheckKeyExist(sql) || DAO.CheckKeyExist(sql1))
                 MessageBox.Show("Bạn không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
@@ -178,7 +181,7 @@ namespace QuanLyDiem
                     Reset();
                     txtMaMon.Enabled = false;
                 }
-            }    
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)

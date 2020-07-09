@@ -105,20 +105,6 @@ namespace QuanLyDiem
                 }
             }
         }
-        private void BorderAround(COMExcel.Range range, int colour)//tạo viền
-        {
-            COMExcel.Borders borders1 = range.Borders;
-            borders1[COMExcel.XlBordersIndex.xlEdgeLeft].LineStyle = COMExcel.XlLineStyle.xlContinuous;
-            borders1[COMExcel.XlBordersIndex.xlEdgeTop].LineStyle = COMExcel.XlLineStyle.xlContinuous;
-            borders1[COMExcel.XlBordersIndex.xlEdgeBottom].LineStyle = COMExcel.XlLineStyle.xlContinuous;
-            borders1[COMExcel.XlBordersIndex.xlEdgeRight].LineStyle = COMExcel.XlLineStyle.xlContinuous;
-            borders1.Color = colour;
-            borders1[COMExcel.XlBordersIndex.xlInsideVertical].LineStyle = COMExcel.XlLineStyle.xlLineStyleNone;
-            borders1[COMExcel.XlBordersIndex.xlInsideHorizontal].LineStyle = COMExcel.XlLineStyle.xlLineStyleNone;
-            borders1[COMExcel.XlBordersIndex.xlDiagonalUp].LineStyle = COMExcel.XlLineStyle.xlLineStyleNone;
-            borders1[COMExcel.XlBordersIndex.xlDiagonalDown].LineStyle = COMExcel.XlLineStyle.xlLineStyleNone;
-            borders1 = null;
-        }
         private void btnIn_Click(object sender, EventArgs e)
         {
             if(rdoMaSV.Checked==true)
@@ -158,7 +144,6 @@ namespace QuanLyDiem
                 exRange.Range["B7:F7"].Font.ColorIndex = 56;
                 exRange.Range["B7:F7"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
                 exRange.Range["B7:B7"].Value = "Thông tin sinh viên \nMã sinh viên: " + txtMaSV.Text.Trim();
-                BorderAround(exRange.Range["B7:F8"], 25);//tạo viền khung thông tin sv
 
                 int hk = 1;
                 int row = 10;
@@ -194,8 +179,6 @@ namespace QuanLyDiem
                         for (cot = 0; cot < tblInBangDiemSV.Columns.Count; cot++) //Điền thông tin hàng từ cột thứ 2, dòng 12
                         {
                             exSheet.Cells[cot + 3][hang + hk + row] = tblInBangDiemSV.Rows[hang][cot].ToString();
-                            //if (cot == 3) exSheet.Cells[cot + 3][hang + hk + row] = tblInBangDiemSV.Rows[hang][cot].ToString();
-                            
                         }
                     }
                     row += tblInBangDiemSV.Rows.Count;

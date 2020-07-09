@@ -12,7 +12,7 @@ namespace QuanLyDiem
     class DAO
     {
         public static SqlConnection con;
-        public static string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True";
+        public static string connectionString = "Data Source=DESKTOP-9QACQU7;Initial Catalog=QuanLyDiem;Integrated Security=True";
         public static void OpenConnection()
         {
             con = new SqlConnection();

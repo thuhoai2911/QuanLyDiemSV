@@ -9,16 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
+
 namespace QuanLyDiem
 {
     public partial class FrmPhongHoc : Form
     {
         DataTable tblPhongHoc;
         public FrmPhongHoc()
+
         {
             InitializeComponent();
         }
-
         private void FrmPhongHoc_Load(object sender, EventArgs e)
         {
             btnLuu.Enabled = false;
@@ -35,6 +36,7 @@ namespace QuanLyDiem
                 tblPhongHoc = DAO.GetDataToTable(sql);
                 GridViewPhongHoc.DataSource = tblPhongHoc;
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -44,7 +46,6 @@ namespace QuanLyDiem
                 DAO.CloseConnection();
             }
         }
-
         private void GridViewPhongHoc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtMaPhong.Text = GridViewPhongHoc.CurrentRow.Cells["clmMaPhong"].Value.ToString();
@@ -53,14 +54,12 @@ namespace QuanLyDiem
             btnXoa.Enabled = true;
             btnHuy.Enabled = true;
         }
-
         private void Reset()
         {
             txtMaPhong.Text = "";
             txtTenPhong.Text = "";
             GridViewPhongHoc.Enabled = true;
         }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             Reset();
@@ -73,7 +72,6 @@ namespace QuanLyDiem
             txtMaPhong.Focus();
             GridViewPhongHoc.Enabled = false;
         }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (txtMaPhong.Text.Trim() == "")
@@ -82,14 +80,12 @@ namespace QuanLyDiem
                 txtMaPhong.Focus();
                 return;
             }
-
             if (txtTenPhong.Text.Trim() == "")
             {
                 MessageBox.Show("Tên phòng không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenPhong.Focus();
                 return;
             }
-
             string s1 = "select MaPhong from PhongHoc where MaPhong = N'" + txtMaPhong.Text.Trim() + "'";
             if (DAO.CheckKeyExist(s1))
             {
@@ -119,12 +115,10 @@ namespace QuanLyDiem
                 txtMaPhong.Enabled = false;
             }
         }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (tblPhongHoc.Rows.Count == 0)
@@ -147,7 +141,6 @@ namespace QuanLyDiem
             LoadDataToTable();
             GridViewPhongHoc.Enabled = true;
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (tblPhongHoc.Rows.Count == 0)
@@ -165,7 +158,7 @@ namespace QuanLyDiem
                 MessageBox.Show("Bạn không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                if (MessageBox.Show("Bạn có muốn xóa không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+                if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
                 {
                     sql = "delete from PhongHoc where MaPhong=N'" + txtMaPhong.Text.Trim() + "'";
                     DAO.OpenConnection();
@@ -180,8 +173,8 @@ namespace QuanLyDiem
                 }
             }
         }
-
         private void btnHuy_Click(object sender, EventArgs e)
+
         {
             Reset();
             btnHuy.Enabled = false;

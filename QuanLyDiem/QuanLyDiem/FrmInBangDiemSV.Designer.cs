@@ -53,12 +53,14 @@
             this.rdoTim = new System.Windows.Forms.RadioButton();
             this.rdoMaSV = new System.Windows.Forms.RadioButton();
             this.txtMaSV = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewInBangDiemSV)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GridViewInBangDiemSV
             // 
+            this.GridViewInBangDiemSV.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.GridViewInBangDiemSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewInBangDiemSV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaSV,
@@ -67,7 +69,7 @@
             this.clmHocKy,
             this.clmLanThi,
             this.clmDiem});
-            this.GridViewInBangDiemSV.Location = new System.Drawing.Point(51, 348);
+            this.GridViewInBangDiemSV.Location = new System.Drawing.Point(46, 405);
             this.GridViewInBangDiemSV.Name = "GridViewInBangDiemSV";
             this.GridViewInBangDiemSV.RowHeadersWidth = 62;
             this.GridViewInBangDiemSV.RowTemplate.Height = 28;
@@ -126,7 +128,7 @@
             // 
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(724, 565);
+            this.btnThoat.Location = new System.Drawing.Point(719, 622);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(96, 66);
             this.btnThoat.TabIndex = 84;
@@ -152,7 +154,7 @@
             // 
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
             this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIn.Location = new System.Drawing.Point(593, 565);
+            this.btnIn.Location = new System.Drawing.Point(588, 622);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(90, 66);
             this.btnIn.TabIndex = 82;
@@ -176,7 +178,7 @@
             this.groupBox1.Controls.Add(this.rdoTim);
             this.groupBox1.Controls.Add(this.rdoMaSV);
             this.groupBox1.Controls.Add(this.txtMaSV);
-            this.groupBox1.Location = new System.Drawing.Point(52, 34);
+            this.groupBox1.Location = new System.Drawing.Point(47, 91);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(831, 283);
             this.groupBox1.TabIndex = 98;
@@ -306,22 +308,35 @@
             this.txtMaSV.Size = new System.Drawing.Size(166, 26);
             this.txtMaSV.TabIndex = 101;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(326, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(266, 38);
+            this.label1.TabIndex = 99;
+            this.label1.Text = "IN ĐIỂM SINH VIÊN";
+            // 
             // FrmInBangDiemSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 648);
+            this.ClientSize = new System.Drawing.Size(933, 718);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnIn);
             this.Controls.Add(this.GridViewInBangDiemSV);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmInBangDiemSV";
-            this.Text = "InBangDiemSV";
+            this.Text = "FrmInBangDiemSV";
             this.Load += new System.EventHandler(this.FrmInBangDiemSV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridViewInBangDiemSV)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -349,5 +364,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmHocKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmLanThi;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiem;
+        private System.Windows.Forms.Label label1;
     }
 }
