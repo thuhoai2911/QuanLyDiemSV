@@ -89,7 +89,6 @@ namespace QuanLyDiem
             btnLuu.Enabled = false;
             btnThem.Enabled = true;
             btnXoa.Enabled = true;
-            btnThoat.Enabled = true;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -155,13 +154,17 @@ namespace QuanLyDiem
                 LoadDataToGridView();
             }
             ResetValues();
+            LoadDataToGridView();
+            GridViewChuyenNganh.Enabled = true;
+            ResetValues();
             btnXoa.Enabled = true;
             btnThem.Enabled = true;
             btnSua.Enabled = true;
-            btnThoat.Enabled = false;
+            btnHuy.Enabled = false;
             btnLuu.Enabled = false;
             txtMaChuyenNganh.Enabled = false;
-            btnHuy.Enabled = false;
+            DAO.CloseConnection();
+
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
@@ -184,6 +187,7 @@ namespace QuanLyDiem
             string ma = GridViewChuyenNganh.CurrentRow.Cells["MaKhoa"].Value.ToString();
             cmbKhoa.Text = ma;
             txtMaChuyenNganh.Enabled = false;
+            btnHuy.Enabled = true;
         }
         private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {

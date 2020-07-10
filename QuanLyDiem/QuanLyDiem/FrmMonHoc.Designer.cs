@@ -113,6 +113,7 @@
             // 
             this.txtTenMon.Location = new System.Drawing.Point(332, 148);
             this.txtTenMon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTenMon.MaxLength = 50;
             this.txtTenMon.Name = "txtTenMon";
             this.txtTenMon.Size = new System.Drawing.Size(199, 26);
             this.txtTenMon.TabIndex = 79;
@@ -153,6 +154,7 @@
             // 
             this.txtMaMon.Location = new System.Drawing.Point(332, 94);
             this.txtMaMon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaMon.MaxLength = 10;
             this.txtMaMon.Name = "txtMaMon";
             this.txtMaMon.Size = new System.Drawing.Size(199, 26);
             this.txtMaMon.TabIndex = 78;

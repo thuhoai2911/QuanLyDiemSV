@@ -133,5 +133,12 @@ namespace QuanLyDiem
             f2.StartPosition = FormStartPosition.CenterScreen;
             f2.Show();
         }
+
+        private void mônHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMonHoc f3 = new FrmMonHoc();
+            f3.StartPosition = FormStartPosition.CenterScreen;
+            f3.Show();
+        }
     }
 }

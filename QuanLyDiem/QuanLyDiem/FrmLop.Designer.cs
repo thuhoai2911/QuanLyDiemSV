@@ -106,6 +106,7 @@
             // 
             this.txtMaLop.Location = new System.Drawing.Point(142, 49);
             this.txtMaLop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaLop.MaxLength = 10;
             this.txtMaLop.Name = "txtMaLop";
             this.txtMaLop.Size = new System.Drawing.Size(199, 26);
             this.txtMaLop.TabIndex = 13;
@@ -136,6 +137,7 @@
             // 
             this.txtTenLop.Location = new System.Drawing.Point(142, 103);
             this.txtTenLop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTenLop.MaxLength = 50;
             this.txtTenLop.Name = "txtTenLop";
             this.txtTenLop.Size = new System.Drawing.Size(199, 26);
             this.txtTenLop.TabIndex = 3;
@@ -166,6 +168,7 @@
             // 
             this.txtKhoaHoc.Location = new System.Drawing.Point(142, 213);
             this.txtKhoaHoc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtKhoaHoc.MaxLength = 10;
             this.txtKhoaHoc.Name = "txtKhoaHoc";
             this.txtKhoaHoc.Size = new System.Drawing.Size(199, 26);
             this.txtKhoaHoc.TabIndex = 7;

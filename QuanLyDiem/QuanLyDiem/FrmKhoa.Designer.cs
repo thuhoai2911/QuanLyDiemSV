@@ -58,6 +58,7 @@
             // txtMaKhoa
             // 
             this.txtMaKhoa.Location = new System.Drawing.Point(226, 100);
+            this.txtMaKhoa.MaxLength = 10;
             this.txtMaKhoa.Name = "txtMaKhoa";
             this.txtMaKhoa.Size = new System.Drawing.Size(152, 26);
             this.txtMaKhoa.TabIndex = 86;
@@ -211,6 +212,7 @@
             // txtWebsite
             // 
             this.txtWebsite.Location = new System.Drawing.Point(565, 153);
+            this.txtWebsite.MaxLength = 100;
             this.txtWebsite.Name = "txtWebsite";
             this.txtWebsite.Size = new System.Drawing.Size(189, 26);
             this.txtWebsite.TabIndex = 78;
@@ -218,6 +220,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(565, 100);
+            this.txtDiaChi.MaxLength = 50;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(189, 26);
             this.txtDiaChi.TabIndex = 77;
@@ -225,6 +228,7 @@
             // txtDienThoai
             // 
             this.txtDienThoai.Location = new System.Drawing.Point(226, 206);
+            this.txtDienThoai.MaxLength = 15;
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(152, 26);
             this.txtDienThoai.TabIndex = 76;
@@ -232,6 +236,7 @@
             // txtTenKhoa
             // 
             this.txtTenKhoa.Location = new System.Drawing.Point(226, 153);
+            this.txtTenKhoa.MaxLength = 50;
             this.txtTenKhoa.Name = "txtTenKhoa";
             this.txtTenKhoa.Size = new System.Drawing.Size(152, 26);
             this.txtTenKhoa.TabIndex = 75;

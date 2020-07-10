@@ -53,6 +53,7 @@ namespace QuanLyDiem
             txtMaDanToc.Text = GridViewDanToc.CurrentRow.Cells["clmMaDanToc"].Value.ToString();
             txtTenDanToc.Text = GridViewDanToc.CurrentRow.Cells["clmTenDanToc"].Value.ToString();
             txtMaDanToc.Enabled = false;
+            btnHuy.Enabled = true;
         }
         private void ResetValues()
         {
@@ -156,7 +157,7 @@ namespace QuanLyDiem
             btnXoa.Enabled = true;
             btnThem.Enabled = true;
             btnSua.Enabled = true;
-            btnHuy.Enabled = true;
+            btnHuy.Enabled = false;
             btnLuu.Enabled = false;
             txtMaDanToc.Enabled = false;
             DAO.CloseConnection();

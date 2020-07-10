@@ -51,6 +51,7 @@ namespace QuanLyDiem
             txtMaChucVu.Text = GridViewChucVu.CurrentRow.Cells["clmMaChucVu"].Value.ToString();
             txtTenChucVu.Text = GridViewChucVu.CurrentRow.Cells["clmTenChucVu"].Value.ToString();
             txtMaChucVu.Enabled = false;
+            btnHuy.Enabled = true;
         }
         private void ResetValues()
         {
@@ -102,7 +103,7 @@ namespace QuanLyDiem
             btnXoa.Enabled = true;
             btnThem.Enabled = true;
             btnSua.Enabled = true;
-            btnHuy.Enabled = true;
+            btnHuy.Enabled = false;
             btnLuu.Enabled = false;
             txtMaChucVu.Enabled = false;
             DAO.CloseConnection();

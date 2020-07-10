@@ -169,6 +169,7 @@
             // txtTenDanToc
             // 
             this.txtTenDanToc.Location = new System.Drawing.Point(352, 140);
+            this.txtTenDanToc.MaxLength = 50;
             this.txtTenDanToc.Name = "txtTenDanToc";
             this.txtTenDanToc.Size = new System.Drawing.Size(223, 26);
             this.txtTenDanToc.TabIndex = 64;
@@ -186,6 +187,7 @@
             // txtMaDanToc
             // 
             this.txtMaDanToc.Location = new System.Drawing.Point(352, 95);
+            this.txtMaDanToc.MaxLength = 10;
             this.txtMaDanToc.Name = "txtMaDanToc";
             this.txtMaDanToc.Size = new System.Drawing.Size(223, 26);
             this.txtMaDanToc.TabIndex = 65;

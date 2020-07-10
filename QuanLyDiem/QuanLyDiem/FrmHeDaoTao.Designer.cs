@@ -53,7 +53,7 @@
             this.GridViewHeDaoTao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaHDT,
             this.clmTenHDT});
-            this.GridViewHeDaoTao.Location = new System.Drawing.Point(64, 206);
+            this.GridViewHeDaoTao.Location = new System.Drawing.Point(64, 199);
             this.GridViewHeDaoTao.Name = "GridViewHeDaoTao";
             this.GridViewHeDaoTao.RowHeadersWidth = 62;
             this.GridViewHeDaoTao.RowTemplate.Height = 28;
@@ -90,6 +90,7 @@
             // txtTenHDT
             // 
             this.txtTenHDT.Location = new System.Drawing.Point(351, 148);
+            this.txtTenHDT.MaxLength = 50;
             this.txtTenHDT.Name = "txtTenHDT";
             this.txtTenHDT.Size = new System.Drawing.Size(223, 26);
             this.txtTenHDT.TabIndex = 64;
@@ -107,6 +108,7 @@
             // txtMaHDT
             // 
             this.txtMaHDT.Location = new System.Drawing.Point(351, 103);
+            this.txtMaHDT.MaxLength = 10;
             this.txtMaHDT.Name = "txtMaHDT";
             this.txtMaHDT.Size = new System.Drawing.Size(223, 26);
             this.txtMaHDT.TabIndex = 65;

@@ -81,6 +81,7 @@
             // 
             this.txtTenPhong.Location = new System.Drawing.Point(499, 109);
             this.txtTenPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTenPhong.MaxLength = 50;
             this.txtTenPhong.Name = "txtTenPhong";
             this.txtTenPhong.Size = new System.Drawing.Size(179, 26);
             this.txtTenPhong.TabIndex = 86;
@@ -199,6 +200,7 @@
             // 
             this.txtMaPhong.Location = new System.Drawing.Point(217, 109);
             this.txtMaPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaPhong.MaxLength = 10;
             this.txtMaPhong.Name = "txtMaPhong";
             this.txtMaPhong.Size = new System.Drawing.Size(111, 26);
             this.txtMaPhong.TabIndex = 79;

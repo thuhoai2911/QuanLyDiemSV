@@ -26,8 +26,6 @@ namespace QuanLyDiem
             btnHuy.Enabled = false;
             txtMaMon.Enabled = false;
             LoadDataToTable();
-            txtMaMon.MaxLength = 10;
-            txtTenMon.MaxLength = 50;
             txtDVHT.MaxLength = 1;
         }
         private void LoadDataToTable()
@@ -98,7 +96,6 @@ namespace QuanLyDiem
                 cmd.Connection = DAO.con;
                 cmd.ExecuteNonQuery();
                 DAO.CloseConnection();
-                MessageBox.Show("Bạn đã thêm mới thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDataToTable();
                 Reset();
                 btnXoa.Enabled = true;

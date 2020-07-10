@@ -41,7 +41,9 @@ namespace QuanLyDiem
             cmbHocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cmbMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             //txtLanThi.MaxLength = 1;
+            GridViewDiem.AllowUserToAddRows = false;
         }
+
         private void ResetValues()
         {
             txtMaSV.Text = "";
@@ -111,7 +113,7 @@ namespace QuanLyDiem
         private void cmbMaLop_SelectedIndexChanged(object sender, EventArgs e)
         {
             string str;
-            str = "select HocKy from Thoi_Khoa_Bieu where MaLop = '" + cmbMaLop.SelectedValue + "' order by HocKy";
+            str = "select HocKy from Thoi_Khoa_Bieu where MaLop = '" + cmbMaLop.SelectedValue + "'";
             DAO.FillDataToCombo(str, cmbHocKy, "HocKy", "HocKy");
             cmbHocKy.SelectedIndex = -1;
         }
@@ -128,7 +130,6 @@ namespace QuanLyDiem
             txtMaSV.Text = GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString();
             txtDiem.Text = GridViewDiem.CurrentRow.Cells["clmDiem"].Value.ToString();
             GridViewDiem.CurrentRow.Cells["clmMaSV"].ReadOnly = true;
-            GridViewDiem.Rows[tblDiem.Rows.Count].ReadOnly = true;
             btnHuy.Enabled = true;
             string ss = (DAO.GetFieldValues("Select Diem from Diem where MaSV = '" + GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() + "'and MaLop='" + cmbMaLop.SelectedValue + "' and HocKy = '" + cmbHocKy.Text + "' and MaMon='" + cmbMonHoc.SelectedValue + "' and LanThi='" + txtLanThi.Text.Trim() + "'"));
             if (GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() != "" && ss == "")
@@ -145,6 +146,7 @@ namespace QuanLyDiem
             }
             else if (GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() != "" && ss != "")
             {
+
                 btnSua.Enabled = true;
                 btnLuu.Enabled = false;
                 btnDanhSach.Enabled = false;
@@ -155,30 +157,21 @@ namespace QuanLyDiem
                 btnQuayLai.Enabled = false;
                 btnThoat.Enabled = false;
             }
-            else if (GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() == "" && GridViewDiem.CurrentRow.Cells["clmDiem"].Value.ToString() == "")
-            {
-                btnSua.Enabled = false;
-                btnLuu.Enabled = false;
-                btnHuy.Enabled = false;
-                btnDanhSach.Enabled = true;
-                btnQuayLai.Enabled = true;
-                cmbMaLop.Enabled = true;
-                txtLanThi.Enabled = true;
-                cmbHocKy.Enabled = true;
-                cmbMonHoc.Enabled = true;
-            }
         }
         public void kt1()
         {
             btnLuu.Enabled = true;
             btnSua.Enabled = false;
+            string ss = (DAO.GetFieldValues("Select Diem from Diem where MaSV = '" + GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() + "'and MaLop='" + cmbMaLop.SelectedValue + "' and HocKy = '" + cmbHocKy.Text + "' and MaMon='" + cmbMonHoc.SelectedValue + "' and LanThi='" + txtLanThi.Text.Trim() + "'"));
             for (int i = 0; i < tblDiem.Rows.Count; i++)
             {
-                if ((Convert.ToString(GridViewDiem.Rows[i].Cells["clmDiem"].Value) != (DAO.GetFieldValues("Select Diem from Diem where MaSV = '" + GridViewDiem.Rows[i].Cells["clmMaSV"].Value.ToString() + "'and MaLop='" + cmbMaLop.SelectedValue + "' and HocKy = '" + cmbHocKy.Text + "' and MaMon='" + cmbMonHoc.SelectedValue + "' and LanThi='" + txtLanThi.Text.Trim() + "'"))) && GridViewDiem.CurrentCell != GridViewDiem.Rows[i].Cells["clmDiem"])
+                if (GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() != "" && ss != "" && (Convert.ToString(GridViewDiem.Rows[i].Cells["clmDiem"].Value) != (DAO.GetFieldValues("Select Diem from Diem where MaSV = '" + GridViewDiem.Rows[i].Cells["clmMaSV"].Value.ToString() + "'and MaLop='" + cmbMaLop.SelectedValue + "' and HocKy = '" + cmbHocKy.Text + "' and MaMon='" + cmbMonHoc.SelectedValue + "' and LanThi='" + txtLanThi.Text.Trim() + "'"))))
                 {
-                    MessageBox.Show("Bạn chưa lưu điểm sinh viên này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Bạn chưa lưu điểm ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     GridViewDiem.CurrentCell = GridViewDiem.Rows[i].Cells["clmDiem"];
+                    break;
                 }
+
             }
         }
         public void kt2()
@@ -194,9 +187,9 @@ namespace QuanLyDiem
                 }
             }
         }
+
         private void GridViewDiem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if ((btnQuayLai.Enabled == true && btnDanhSach.Enabled == true) || (btnQuayLai.Enabled == false && btnDanhSach.Enabled == false))
             {
                 if (btnSua.Enabled == true)
@@ -231,28 +224,54 @@ namespace QuanLyDiem
         {
             DAO.OpenConnection();
             string sql;
-            if (GridViewDiem.CurrentRow.Cells["clmDiem"].Value.ToString().Trim() == "")
-            {
-                MessageBox.Show("Bạn phải nhập điểm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if ((Convert.ToDouble(GridViewDiem.CurrentRow.Cells["clmDiem"].Value.ToString().Trim()) > 10))
+
+            if ((GridViewDiem.CurrentRow.Cells["clmDiem"].Value.ToString().Trim() != "") && (Convert.ToDouble(GridViewDiem.CurrentRow.Cells["clmDiem"].Value.ToString().Trim()) > 10))
             {
                 MessageBox.Show("Bạn nhập sai điểm.Nhập lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtDiem.Focus();
                 return;
             }
 
-            sql = "UPDATE Diem SET Diem = ROUND(" + GridViewDiem.CurrentRow.Cells["clmDiem"].Value.ToString() + ",1) WHERE MaSV=N'" + GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() + "'AND MaLop=N'" + cmbMaLop.SelectedValue + "'AND MaMon='" + cmbMonHoc.SelectedValue + "' and LanThi='" + txtLanThi.Text.Trim() + "'";
-            DAO.RunSql(sql);
-            if (Convert.ToDouble(GridViewDiem.CurrentRow.Cells["clmDiem"].Value.ToString().Trim()) < 5)
+            for (int i = 0; i < tblDiem.Rows.Count; i++)
             {
-                MessageBox.Show("Sinh viên này phải thi lại lần " + (Convert.ToInt32(txtLanThi.Text.Trim()) + 1), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                sql = "INSERT INTO Diem VALUES(N'" + GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() + "',N'" + cmbMaLop.Text + "','" + cmbMonHoc.SelectedValue + "',"
-                     + cmbHocKy.Text + "," + (Convert.ToInt32(txtLanThi.Text.Trim()) + 1) + ",null)";
-                DAO.RunSql(sql);
-            }
+                string ss = (DAO.GetFieldValues("Select Diem from Diem where MaSV = '" + GridViewDiem.Rows[i].Cells["clmMaSV"].Value.ToString() + "'and MaLop='" + cmbMaLop.SelectedValue + "' and HocKy = '" + cmbHocKy.Text + "' and MaMon='" + cmbMonHoc.SelectedValue + "' and LanThi='" + txtLanThi.Text.Trim() + "'"));
+                if (Convert.ToString(GridViewDiem.Rows[i].Cells["clmDiem"].Value) != ss && ss == "")
+                {
+                    int t = 0;
+                    if (Convert.ToDouble(GridViewDiem.Rows[i].Cells["clmDiem"].Value) < Convert.ToInt32(GridViewDiem.Rows[i].Cells["clmDiem"].Value))
+                    {
+                        t = Convert.ToInt32(GridViewDiem.Rows[i].Cells["clmDiem"].Value);
+                    }
+                    else if ((Convert.ToDouble(GridViewDiem.Rows[i].Cells["clmDiem"].Value) - Convert.ToInt32(GridViewDiem.Rows[i].Cells["clmDiem"].Value)) == 0.5)
+                    {
+                        t = Convert.ToInt32(GridViewDiem.Rows[i].Cells["clmDiem"].Value) + 1;
+                    }
+                    else if ((Convert.ToDouble(GridViewDiem.Rows[i].Cells["clmDiem"].Value) - Convert.ToInt32(GridViewDiem.Rows[i].Cells["clmDiem"].Value)) < 0.5)
+                    {
+                        t = Convert.ToInt32(GridViewDiem.Rows[i].Cells["clmDiem"].Value);
+                    }
+                    else if (Convert.ToDouble(GridViewDiem.Rows[i].Cells["clmDiem"].Value) == Convert.ToInt32(GridViewDiem.Rows[i].Cells["clmDiem"].Value))
+                    {
+                        t = Convert.ToInt32(GridViewDiem.Rows[i].Cells["clmDiem"].Value);
+                    }
+                    sql = "UPDATE Diem SET Diem = " + t + " WHERE MaSV=N'" + GridViewDiem.Rows[i].Cells["clmMaSV"].Value.ToString() + "'AND MaLop=N'" + cmbMaLop.SelectedValue + "' and HocKy = '" + cmbHocKy.Text + "'AND MaMon='" + cmbMonHoc.SelectedValue + "' and LanThi='" + txtLanThi.Text.Trim() + "'";
+                    DAO.RunSql(sql);
 
+                    if (t < 5)
+                    {
+                        sql = "INSERT INTO Diem VALUES(N'" + GridViewDiem.Rows[i].Cells["clmMaSV"].Value.ToString() + "',N'" + cmbMaLop.SelectedValue + "','" + cmbMonHoc.SelectedValue + "',"
+                             + cmbHocKy.Text + "," + (Convert.ToInt32(txtLanThi.Text.Trim()) + 1) + ",null)";
+                        DAO.RunSql(sql);
+                    }
+
+                }
+            }
+            string a1 = (DAO.GetFieldValues("Select count(*) from Diem where MaLop='" + cmbMaLop.SelectedValue + "' and HocKy = '" + cmbHocKy.Text + "' and MaMon='" + cmbMonHoc.SelectedValue + "' and LanThi='" + txtLanThi.Text.Trim() + "' and diem<5"));
+            if (Convert.ToInt32(a1) > 0)
+            {
+                MessageBox.Show("Lớp có " + Convert.ToInt32(a1) + " sinh viên phải thi lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            Load_DataGridView();
             btnDanhSach.Enabled = true;
             cmbMaLop.Enabled = true;
             txtLanThi.Enabled = true;
@@ -329,6 +348,7 @@ namespace QuanLyDiem
         {
             DAO.OpenConnection();
             string sql;
+
             string s4 = "SELECT MaSV, MaLop, MaMon,HocKy,LanThi FROM Diem WHERE MaSV=N'" + GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() + "'AND MaLop=N'" + cmbMaLop.SelectedValue + "'AND MaMon='" + cmbMonHoc.SelectedValue + "' and HocKy = '" + cmbHocKy.Text + "' and LanThi='" + (Convert.ToInt32(txtLanThi.Text.Trim()) + 1) + "'";
             if (GridViewDiem.CurrentRow.Cells["clmDiem"].Value.ToString().Trim() == "")
             {
@@ -348,23 +368,41 @@ namespace QuanLyDiem
             }
             else
             {
-                sql = "UPDATE Diem SET Diem = ROUND(" + GridViewDiem.CurrentRow.Cells["clmDiem"].Value.ToString() + ",1) WHERE MaSV=N'" + GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() + "'AND MaLop=N'" + cmbMaLop.SelectedValue + "'AND MaMon='" + cmbMonHoc.SelectedValue + "' and LanThi='" + txtLanThi.Text.Trim() + "'";
+                int x = 0;
+                if (Convert.ToDouble(GridViewDiem.CurrentRow.Cells["clmDiem"].Value) < Convert.ToInt32(GridViewDiem.CurrentRow.Cells["clmDiem"].Value))
+                {
+                    x = Convert.ToInt32(GridViewDiem.CurrentRow.Cells["clmDiem"].Value);
+                }
+                else if ((Convert.ToDouble(GridViewDiem.CurrentRow.Cells["clmDiem"].Value) - Convert.ToInt32(GridViewDiem.CurrentRow.Cells["clmDiem"].Value)) == 0.5)
+                {
+                    x = Convert.ToInt32(GridViewDiem.CurrentRow.Cells["clmDiem"].Value) + 1;
+                }
+                else if ((Convert.ToDouble(GridViewDiem.CurrentRow.Cells["clmDiem"].Value) - Convert.ToInt32(GridViewDiem.CurrentRow.Cells["clmDiem"].Value)) < 0.5)
+                {
+                    x = Convert.ToInt32(GridViewDiem.CurrentRow.Cells["clmDiem"].Value);
+                }
+                else if (Convert.ToDouble(GridViewDiem.CurrentRow.Cells["clmDiem"].Value) == Convert.ToInt32(GridViewDiem.CurrentRow.Cells["clmDiem"].Value))
+                {
+                    x = Convert.ToInt32(GridViewDiem.CurrentRow.Cells["clmDiem"].Value);
+                }
+                sql = "UPDATE Diem SET Diem = " + x + " WHERE MaSV=N'" + GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() + "'AND MaLop=N'" + cmbMaLop.SelectedValue + "' and HocKy = '" + cmbHocKy.Text + "'AND MaMon='" + cmbMonHoc.SelectedValue + "' and LanThi='" + txtLanThi.Text.Trim() + "'";
                 DAO.RunSql(sql);
+                txtDiem.Text = Convert.ToString(x);
                 string str1 = "Select MaSV from Diem where MaSV = '" + GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() + "'and MaLop='" + cmbMaLop.SelectedValue + "' and HocKy = '" + cmbHocKy.Text + "' and MaMon='" + cmbMonHoc.SelectedValue + "' and LanThi='" + (Convert.ToInt32(txtLanThi.Text.Trim()) + 1) + "'";
-                if (Convert.ToDouble(GridViewDiem.CurrentRow.Cells["clmDiem"].Value.ToString().Trim()) >= 5 && DAO.CheckKeyExist(str1) == true)
+                if (x >= 5 && DAO.CheckKeyExist(str1) == true)
                 {
                     MessageBox.Show("Sinh viên này không phải thi lại lần sau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     string s0 = "DELETE Diem WHERE MaSV=N'" + GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() + "'AND MaLop=N'" + cmbMaLop.SelectedValue + "'AND MaMon='" + cmbMonHoc.SelectedValue + "' and HocKy = '" + cmbHocKy.Text + "' and LanThi='" + (Convert.ToInt32(txtLanThi.Text.Trim()) + 1) + "'";
                     DAO.RunSql(s0);
                 }
-                else if (Convert.ToDouble(GridViewDiem.CurrentRow.Cells["clmDiem"].Value.ToString().Trim()) < 5 && DAO.CheckKeyExist(s4) == true)
+                else if (x < 5 && DAO.CheckKeyExist(s4) == true)
                 {
                     MessageBox.Show("Sinh viên này phải thi lại lần " + (Convert.ToInt32(txtLanThi.Text.Trim()) + 1), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else if (Convert.ToDouble(GridViewDiem.CurrentRow.Cells["clmDiem"].Value.ToString().Trim()) < 5 && DAO.CheckKeyExist(s4) == false)
+                else if (x < 5 && DAO.CheckKeyExist(s4) == false)
                 {
                     MessageBox.Show("Sinh viên này phải thi lại lần " + (Convert.ToInt32(txtLanThi.Text.Trim()) + 1), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    sql = "INSERT INTO Diem VALUES(N'" + GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() + "',N'" + cmbMaLop.Text + "','" + cmbMonHoc.SelectedValue + "',"
+                    sql = "INSERT INTO Diem VALUES(N'" + GridViewDiem.CurrentRow.Cells["clmMaSV"].Value.ToString() + "',N'" + cmbMaLop.SelectedValue + "','" + cmbMonHoc.SelectedValue + "',"
                          + cmbHocKy.Text + "," + (Convert.ToInt32(txtLanThi.Text.Trim()) + 1) + ",null)";
                     DAO.RunSql(sql);
                 }

@@ -272,6 +272,7 @@ namespace QuanLyDiem
 
         private void GridViewTKB_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnHuy.Enabled = true;
             txtid.Text = GridViewTKB.CurrentRow.Cells["id"].Value.ToString();
             string ma = GridViewTKB.CurrentRow.Cells["MaLop"].Value.ToString();
             cmbLop.Text = DAO.GetFieldValues("select MaLop from Lop where MaLop = '" + ma + "'");

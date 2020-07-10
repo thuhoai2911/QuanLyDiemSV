@@ -55,6 +55,7 @@
             // 
             this.txtMaChuyenNganh.Location = new System.Drawing.Point(286, 100);
             this.txtMaChuyenNganh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaChuyenNganh.MaxLength = 10;
             this.txtMaChuyenNganh.Name = "txtMaChuyenNganh";
             this.txtMaChuyenNganh.Size = new System.Drawing.Size(148, 26);
             this.txtMaChuyenNganh.TabIndex = 77;
@@ -113,6 +114,7 @@
             // 
             this.txtTenChuyenNganh.Location = new System.Drawing.Point(286, 162);
             this.txtTenChuyenNganh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTenChuyenNganh.MaxLength = 50;
             this.txtTenChuyenNganh.Name = "txtTenChuyenNganh";
             this.txtTenChuyenNganh.Size = new System.Drawing.Size(148, 26);
             this.txtTenChuyenNganh.TabIndex = 78;

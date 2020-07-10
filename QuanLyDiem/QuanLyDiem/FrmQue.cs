@@ -57,6 +57,7 @@ namespace QuanLyDiem
             txtMaQue.Text = GridViewQue.CurrentRow.Cells["clmMaQue"].Value.ToString();
             txtTenQue.Text = GridViewQue.CurrentRow.Cells["clmTenQue"].Value.ToString();
             txtMaQue.Enabled = false;
+            btnHuy.Enabled = true;
         }
         private void ResetValues()
         {
@@ -141,7 +142,7 @@ namespace QuanLyDiem
             btnXoa.Enabled = true;
             btnThem.Enabled = true;
             btnSua.Enabled = true;
-            btnHuy.Enabled = true;
+            btnHuy.Enabled = false;
             btnLuu.Enabled = false;
             txtMaQue.Enabled = false;
             DAO.CloseConnection();

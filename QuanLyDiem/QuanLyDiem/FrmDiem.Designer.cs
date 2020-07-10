@@ -221,6 +221,7 @@
             // txtMaSV
             // 
             this.txtMaSV.Location = new System.Drawing.Point(154, 45);
+            this.txtMaSV.MaxLength = 15;
             this.txtMaSV.Name = "txtMaSV";
             this.txtMaSV.Size = new System.Drawing.Size(170, 29);
             this.txtMaSV.TabIndex = 79;

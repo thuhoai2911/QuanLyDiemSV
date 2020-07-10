@@ -20,9 +20,6 @@ namespace QuanLyDiem
         private void FrmHeDaoTao_Load(object sender, EventArgs e)
         {
             DAO.OpenConnection();
-            txtMaHDT.Enabled = false;
-            btnLuu.Enabled = false;
-            btnHuy.Enabled = false;
             Load_DataGridView();
             DAO.CloseConnection();
         }
@@ -39,6 +36,9 @@ namespace QuanLyDiem
                 GridViewHeDaoTao.AllowUserToAddRows = false;
                 // Không cho phép sửa dữ liệu trực tiếp trên lưới
                 GridViewHeDaoTao.EditMode = DataGridViewEditMode.EditProgrammatically;
+                txtMaHDT.Enabled = false;
+                btnLuu.Enabled = false;
+                btnHuy.Enabled = false;
                 DAO.CloseConnection();
             }
             catch (Exception ex)
@@ -57,6 +57,7 @@ namespace QuanLyDiem
             txtMaHDT.Text = GridViewHeDaoTao.CurrentRow.Cells["clmMaHDT"].Value.ToString();
             txtTenHDT.Text = GridViewHeDaoTao.CurrentRow.Cells["clmTenHDT"].Value.ToString();
             txtMaHDT.Enabled = false;
+            btnHuy.Enabled = true;
         }
         private void ResetValues()
         {
@@ -102,7 +103,6 @@ namespace QuanLyDiem
             DAO.RunSql(sql);
             Load_DataGridView();
             ResetValues();
-            btnHuy.Enabled = false;
             DAO.CloseConnection();
         }
 
@@ -167,7 +167,7 @@ namespace QuanLyDiem
             btnXoa.Enabled = true;
             btnThem.Enabled = true;
             btnSua.Enabled = true;
-            btnHuy.Enabled = true;
+            btnHuy.Enabled = false;
             btnLuu.Enabled = false;
             txtMaHDT.Enabled = false;
             DAO.CloseConnection();

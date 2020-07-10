@@ -219,6 +219,7 @@ namespace QuanLyDiem
             txtDiaChi.Text = GridViewKhoa.CurrentRow.Cells["clmDiaChi"].Value.ToString();
             txtWebsite.Text = GridViewKhoa.CurrentRow.Cells["clmWebsite"].Value.ToString();
             txtMaKhoa.Enabled = false;
+            btnHuy.Enabled = true;
         }
     }
 }

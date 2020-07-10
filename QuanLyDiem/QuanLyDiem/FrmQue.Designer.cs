@@ -80,6 +80,7 @@
             // txtTenQue
             // 
             this.txtTenQue.Location = new System.Drawing.Point(503, 104);
+            this.txtTenQue.MaxLength = 50;
             this.txtTenQue.Name = "txtTenQue";
             this.txtTenQue.Size = new System.Drawing.Size(137, 26);
             this.txtTenQue.TabIndex = 72;
@@ -117,6 +118,7 @@
             // txtMaQue
             // 
             this.txtMaQue.Location = new System.Drawing.Point(234, 104);
+            this.txtMaQue.MaxLength = 10;
             this.txtMaQue.Name = "txtMaQue";
             this.txtMaQue.Size = new System.Drawing.Size(94, 26);
             this.txtMaQue.TabIndex = 80;

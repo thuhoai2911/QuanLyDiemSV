@@ -80,6 +80,7 @@
             // txtTenChucVu
             // 
             this.txtTenChucVu.Location = new System.Drawing.Point(393, 152);
+            this.txtTenChucVu.MaxLength = 50;
             this.txtTenChucVu.Name = "txtTenChucVu";
             this.txtTenChucVu.Size = new System.Drawing.Size(150, 26);
             this.txtTenChucVu.TabIndex = 72;
@@ -117,6 +118,7 @@
             // txtMaChucVu
             // 
             this.txtMaChucVu.Location = new System.Drawing.Point(393, 95);
+            this.txtMaChucVu.MaxLength = 10;
             this.txtMaChucVu.Name = "txtMaChucVu";
             this.txtMaChucVu.Size = new System.Drawing.Size(150, 26);
             this.txtMaChucVu.TabIndex = 80;

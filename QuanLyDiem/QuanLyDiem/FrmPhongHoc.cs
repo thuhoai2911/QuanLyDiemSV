@@ -104,7 +104,6 @@ namespace QuanLyDiem
                 cmd.Connection = DAO.con;
                 cmd.ExecuteNonQuery();
                 DAO.CloseConnection();
-                MessageBox.Show("Bạn đã thêm mới thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadDataToTable();
                 Reset();
                 btnXoa.Enabled = true;
